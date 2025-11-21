@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Footer() {
   return (
     <footer className="bg-card/50 border-t border-border/50 py-12 px-4 sm:px-6 lg:px-8">
@@ -5,10 +7,17 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent/50 rounded-lg flex items-center justify-center">
+              {/* <div className="w-8 h-8 bg-linear-to-br from-accent to-accent/50 rounded-lg flex items-center justify-center">
                 <span className="text-foreground font-bold">✈</span>
-              </div>
-              <span className="font-bold text-foreground">AAEA</span>
+              </div> */}
+              {/* <span className="font-bold text-foreground">AAEA</span> */}
+              <Image
+                src="/assets/logo.png"
+                alt="AAEA Logo"
+                width={100}
+                height={100}
+                className=""
+              />
             </div>
             <p className="text-foreground/60 text-sm">
               Celebrating excellence in aviation.
@@ -39,7 +48,7 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-foreground/60">
-              <li>Email: info@aaea.ng</li>
+              <li>Email: info@aaea.com.ng</li>
               <li>Phone: +234 (0) XXX XXXX</li>
               <li>Abuja, Nigeria</li>
             </ul>
