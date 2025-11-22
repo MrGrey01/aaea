@@ -18,7 +18,7 @@ export function SponsorshipBanner() {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-accent/10 to-accent/5 border-y border-accent/20">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-secondary/10 to-secondary/5 border-y border-accent/20">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Beams from "@/components/customs/beams";
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -64,14 +64,6 @@ export function Hero() {
               Excellence Awards
             </span>
           </h1>
-          {/* <Image
-            src="/assets/logo.png"
-            alt="AAEA Logo"
-            width={400}
-            height={400}
-            className=""
-          /> */}
-
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-foreground/70 max-w-2xl mx-auto mb-10 leading-relaxed">
             Celebrating innovation, excellence, and leadership in the aviation
@@ -81,16 +73,23 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
-            <button className="px-8 py-4 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-all duration-300 font-semibold text-lg hover:shadow-lg hover:shadow-accent/20 transform hover:scale-[1.04]">
+            <Button
+              size="lg"
+              className="bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-all duration-300 font-semibold hover:shadow-lg hover:shadow-accent/20 transform hover:scale-[1.04]"
+            >
               Register Now
-            </button>
-            <button className="px-8 py-4 border border-accent/30 text-foreground rounded-lg hover:bg-accent/5 transition-all duration-300 font-semibold text-lg hover:shadow-md transform hover:scale-[1.02]">
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border border-accent/30 text-foreground rounded-lg hover:text-accent/50 transition-all duration-300 font-semibold hover:shadow-md transform hover:scale-[1.02]"
+            >
               Learn More
-            </button>
+            </Button>
           </div>
 
           {/* Event Info Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10 pt-10 border-t border-border/40">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10 pt-10 border-t border-accent/10">
             {[
               {
                 label: "DATE",

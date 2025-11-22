@@ -34,7 +34,13 @@ export function Header() {
             href="#awards"
             className="text-foreground/70 hover:text-foreground transition-colors"
           >
-            Awards
+            Nominees
+          </a>
+          <a
+            href="#awards"
+            className="text-foreground/70 hover:text-foreground transition-colors"
+          >
+            Updates
           </a>
           <a
             href="#contact"
