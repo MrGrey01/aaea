@@ -143,4 +143,11 @@
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
   }
+
+  .masked-img {
+    mask-image: url("/assets/logo.png");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 50%;
+  }
 }
