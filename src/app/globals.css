@@ -4,6 +4,20 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --gold: oklch(0.72 0.14 80);
+  --color-gold-50: oklch(0.97 0.02 80);
+  --color-gold-100: oklch(0.93 0.04 80);
+  --color-gold-200: oklch(0.87 0.07 80);
+  --color-gold-300: oklch(0.81 0.10 80);
+  --color-gold-400: oklch(0.76 0.12 80);
+  --color-gold-500: oklch(0.72 0.14 80);
+  --color-gold-600: oklch(0.64 0.13 80);
+  --color-gold-700: oklch(0.54 0.11 80);
+  --color-gold-800: oklch(0.42 0.09 80);
+  --color-gold-900: oklch(0.30 0.06 80);
+  --color-gold-950: oklch(0.20 0.04 80);
+
+
   /* Updated color tokens for aviation dark theme */
   --background: oklch(0.08 0 0);
   --foreground: oklch(0.98 0 0);
@@ -76,8 +90,27 @@
 }
 
 @theme inline {
+
+  /* Colors ---------------------------------------------------------- */
+  --color-brand: var(--cocoa);
+  --color-accent-brand: var(--color-gold-500);
+  --color-accent-brand-50: var(--color-gold-50);
+  --color-accent-brand-100: var(--color-gold-100);
+  --color-accent-brand-200: var(--color-gold-200);
+  --color-accent-brand-300: var(--color-gold-300);
+  --color-accent-brand-400: var(--color-gold-400);
+  --color-accent-brand-500: var(--color-gold-500);
+  --color-accent-brand-600: var(--color-gold-600);
+  --color-accent-brand-700: var(--color-gold-700);
+  --color-accent-brand-800: var(--color-gold-800);
+  --color-accent-brand-900: var(--color-gold-900);
+  --color-accent-brand-950: var(--color-gold-950);
+
+  /* Fonts ---------------------------------------------------------- */
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
+
+  /* ------------------------------------------------------------ */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -150,4 +183,40 @@
     mask-position: center;
     mask-size: 50%;
   }
+}
+
+.block-line-wrapper {
+  position: relative;
+  width: max-content;
+  display: block;
+}
+
+.block-line {
+  position: relative;
+  display: block;
+}
+
+.block-revealer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101%;
+  height: 101%;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 1;
+}
+
+
+.custom-input select {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Style the individual options */
+.custom-input select option {
+  background-color: white;
+  color: #333;
 }

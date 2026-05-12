@@ -1,19 +1,16 @@
 import { Header } from "@/components/customs/header";
-import { Hero } from "@/components/customs/hero";
+import { Hero } from "@/features/landing/sections/hero";
 
-import { HeroTwo } from "@/components/sections/hero2";
-import { MetricBar } from "@/components/sections/metric-bar";
-import { AwardCategories } from "@/components/sections/award-categories";
-import { Judges } from "@/components/sections/judges";
-import { HallOfFame } from "@/components/sections/hall-of-fame";
+import { HeroTwo } from "@/features/landing/sections/hero2";
+import { MetricBar } from "@/features/landing/sections/metric-bar";
+import { AwardCategories } from "@/features/landing/sections/award-categories";
+import { Judges } from "@/features/landing/sections/judges";
+import { HallOfFame } from "@/features/landing/sections/hall-of-fame";
 
-import { Features } from "@/components/customs/features";
-// import { Awards } from "@/components/customs/awards";
-// import { ArtSection } from "@/components/customs/art-section";
-import { SponsorshipBanner } from "@/components/customs/sponsorship-banner";
-import { CTA } from "@/components/customs/cta";
-// import { Footer } from "@/components/customs/footer";
-import { FooterOne } from "@/components/sections/footer-one";
+import { Features } from "@/features/landing/sections/features";
+import { SponsorshipBanner } from "@/features/landing/sections/sponsorship-banner";
+import { CTA } from "@/features/landing/sections/cta";
+import { FooterOne } from "@/features/landing/sections/footer-one";
 
 export default function Home() {
   return (
