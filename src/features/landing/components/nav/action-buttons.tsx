@@ -1,4 +1,4 @@
-import { ArrowRight, UserIcon } from "lucide-react";
+import { ArrowRight, User2, UserIcon } from "lucide-react";
 import Link from "next/link";
 
 interface ActionButtonsProps {
@@ -39,25 +39,26 @@ export const ActionButtons = ({
   return (
     <div className="flex gap-2">
       <Link
-        href="/bookings"
+        href="/sign-in"
         onClick={onItemClick}
-        className="group flex flex-1 items-center gap-2.5 rounded-full border border-accent-brand bg-accent-brand p-2 md:p-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-transparent hover:text-white"
-        aria-label="Book Now"
+        className="group flex flex-1 items-center gap-2.5 rounded-full border border-gold-500/30 p-2 md:p-2.5 text-sm font-semibold text-gold-400 transition-all duration-300 hover:bg-gold-500 hover:text-white"
+        aria-label="Sign In"
       >
         <span
-          className="flex h-6 w-6 items-center justify-center rounded-full bg-white transition-all duration-300 group-hover:bg-accent-brand group-hover:border group-hover:border-white"
+          className="flex h-6 w-6 items-center justify-center rounded-full bg-gold-500 transition-all duration-300 border-gold-500/30 group-hover:bg-white group-hover:border group-hover:border-white"
           aria-hidden="true"
         >
-          <ArrowRight className="h-3 w-3 text-accent-brand transition-colors duration-300 group-hover:text-white" />
+          <ArrowRight className="h-3 w-3 transition-colors text-white group-hover:text-gold-500" />
         </span>
-        Book Now
+        Sign Up
       </Link>
+
       <Link
         href={userUrl}
         onClick={onItemClick}
-        className="rounded-full p-2 md:p-2.5 bg-accent-brand text-white"
+        className="flex h-11 w-11 items-center justify-center rounded-full border border-gold-500/30 bg-black/30 text-gold-400 backdrop-blur-xl transition-all hover:bg-gold-500 hover:text-brand-950 lg:right-10"
       >
-        <UserIcon />
+        <User2 className="h-4.5 w-4.5" />
       </Link>
     </div>
   );

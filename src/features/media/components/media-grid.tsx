@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MediaCard } from "./media-card";
-import { useMedia, useDeleteMedia } from "@/features/media/hooks/use-media-query";
+import {
+  useMedia,
+  useDeleteMedia,
+} from "@/features/media/hooks/use-media-query";
 import { useMediaPicker } from "@/features/media/hooks/use-media-picker";
 import type { MediaItem } from "@/types/router-types";
 import { toast } from "sonner";
@@ -43,13 +47,18 @@ export function MediaGrid({
     if (!confirm(`Delete "${item.filename}"? This cannot be undone.`)) return;
     deleteMedia(item.id, {
       onSuccess: () => toast.success("Image deleted"),
-      onError:   (e: any) => toast.error(e.message ?? "Delete failed"),
+      onError: (e: any) => toast.error(e.message ?? "Delete failed"),
     });
   };
 
   if (isLoading) {
     return (
-      <div className={cn("grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5", className)}>
+      <div
+        className={cn(
+          "grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5",
+          className,
+        )}
+      >
         {[...Array(10)].map((_, i) => (
           <div
             key={i}

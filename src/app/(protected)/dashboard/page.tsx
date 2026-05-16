@@ -17,15 +17,7 @@ const Page = async () => {
     return <PhotographerDashboardView userId={session.user.id} />;
   }
 
-  return (
-    <>
-      {/* <ClientDashboardView
-      userId={session.user.id}
-      email={session.user.email}
-      isAnonymous={Boolean(session.user.isAnonymous)}
-      /> */}
-    </>
-  );
+  return <>Welcome</>;
 };
 
 export default Page;

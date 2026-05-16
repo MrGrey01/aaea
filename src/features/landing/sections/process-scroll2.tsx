@@ -25,42 +25,6 @@ const containerClasses =
 
 // ─── Panel Data ────────────────────────────────────────────────────────────────
 
-// const PANELS = [
-//   {
-//     step: 1,
-//     label: "Book Your Session", //use sectiondata.features.title
-//     sub: "Choose your preferred date and photography package. I'll confirm availability and lock in your booking.", //use sectiondata.features.description
-//     tag: "Discovery", //use sectiondata.features.icon
-//     accent: "#e63025",
-//     imageUrl: "/images/gallery/2.jpg", //use sectiondata.features.image
-//   },
-//   {
-//     step: 2,
-//     label: "Creative Direction",
-//     sub: "We align on mood boards, locations, wardrobe, and the visual language that tells your story.",
-//     tag: "Planning",
-//     accent: "#f4a261",
-//     imageUrl: "/images/gallery/3.jpg",
-//   },
-//   {
-//     step: 3,
-//     label: "The Shoot",
-//     sub: "A focused, immersive session where every frame is crafted with intention. You bring the energy.",
-//     tag: "Execution",
-//     accent: "#2a9d8f",
-//     imageUrl: "/images/gallery/4.jpg",
-//     // extraHeight: true,
-//   },
-//   {
-//     step: 4,
-//     label: "Final Delivery",
-//     sub: "Retouched selects delivered in a private gallery within 7 days. Yours to keep, forever.",
-//     tag: "Delivery",
-//     accent: "#c77dff",
-//     imageUrl: "/images/gallery/5.jpg",
-//   },
-// ];
-
 // ─── Ruler ─────────────────────────────────────────────────────────────────────
 
 function Ruler() {
@@ -234,7 +198,9 @@ export const ProcessScroll = ({ sectionData }: ProcessScrollProps) => {
         tag: item.icon ?? "",
         accent: PANEL_CONFIG[i]?.accent ?? "#e63025",
         imageUrl:
-          item.image ?? FALLBACK_PANELS[i]?.imageUrl ?? "/images/gallery/2.jpg",
+          item.image ??
+          FALLBACK_PANELS[i]?.imageUrl ??
+          "/images/fallback-bg.jpg",
       }))
     : FALLBACK_PANELS;
 

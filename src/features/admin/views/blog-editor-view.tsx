@@ -5,21 +5,19 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { client } from "@/lib/orpc";
+// import { useUploadThing } from "@/lib/uploadthing-client";
 import { RichTextEditor } from "@/features/blog/components/rich-text-editor";
 import {
   BlogPostWithRelations,
   BlogCategory,
   BlogTag,
 } from "@/types/router-types";
-import NextImage from "next/image";
 import { cn } from "@/lib/utils";
 import { IconArrowBack } from "@tabler/icons-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-import { useMediaPicker } from "@/features/media/hooks/use-media-picker";
-import { ImageIcon, X } from "lucide-react";
-import type { MediaItem } from "@/types/router-types";
+import { ImageUploadInput } from "@/components/shared/forms/image-upload-input";
+import { Links } from "@/datas/navigation-links";
 
 interface Props {
   post: BlogPostWithRelations | null;
@@ -33,8 +31,6 @@ export function BlogEditorView({ post, categories, tags }: Props) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   // const [coverUploading, setCoverUploading] = useState(false);
   // const { startUpload } = useUploadThing("galleryUploader");
-
-  const { open } = useMediaPicker();
 
   const [form, setForm] = useState({
     title: post?.title ?? "",
@@ -62,10 +58,20 @@ export function BlogEditorView({ post, categories, tags }: Props) {
       prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id],
     );
 
-  const handleCoverSelect = (media: MediaItem) => {
-    setField("coverImage", media.utUrl);
-    setField("coverImageUtKey", media.utKey);
-  };
+  // const handleCoverUpload = async (file: File) => {
+  //   setCoverUploading(true);
+  //   try {
+  //     const results = await startUpload([file]);
+  //     if (results?.[0]) {
+  //       setField("coverImage", results[0].ufsUrl);
+  //       setField("coverImageUtKey", results[0].key);
+  //     }
+  //   } catch {
+  //     toast.error("Cover upload failed");
+  //   } finally {
+  //     setCoverUploading(false);
+  //   }
+  // };
 
   const handleSave = async (status?: "draft" | "published" | "archived") => {
     if (!form.title.trim()) {
@@ -106,8 +112,7 @@ export function BlogEditorView({ post, categories, tags }: Props) {
     <div className="max-w-5xl mx-auto px-6 py-10">
       <div className="flex">
         <Button asChild className="rounded-full">
-          <Link href="dashboard/admin/posts">
-            {" "}
+          <Link href={`${Links.admin.blog.postsPage}`}>
             <IconArrowBack /> Posts
           </Link>
         </Button>
@@ -200,47 +205,21 @@ export function BlogEditorView({ post, categories, tags }: Props) {
           </div>
 
           {/* Cover image */}
-          <div className="rounded-2xl border border-white/8 bg-white/3 p-5 space-y-3">
+          {/* <div className="rounded-2xl border border-white/8 bg-white/3 p-5 space-y-3">
             <p className="text-xs font-bold uppercase tracking-widest text-white/30">
               Cover image
             </p>
-            {form.coverImage ? (
-              <div className="relative aspect-video rounded-xl overflow-hidden group">
+            {form.coverImage && (
+              <div className="relative aspect-video rounded-xl overflow-hidden">
                 <NextImage
                   src={form.coverImage}
                   alt="Cover"
                   fill
                   className="object-cover"
                 />
-                {/* Overlay actions */}
-                <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button
-                    onClick={() => open(handleCoverSelect)}
-                    className="rounded-lg bg-white/10 px-3 py-1.5 text-xs text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
-                  >
-                    Replace
-                  </button>
-                  <button
-                    onClick={() => {
-                      setField("coverImage", "");
-                      setField("coverImageUtKey", "");
-                    }}
-                    className="rounded-lg bg-red-500/20 px-3 py-1.5 text-xs text-red-400 backdrop-blur-sm hover:bg-red-500/30 transition-colors"
-                  >
-                    Remove
-                  </button>
-                </div>
               </div>
-            ) : (
-              <button
-                onClick={() => open(handleCoverSelect)}
-                className="flex w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-white/10 py-8 text-white/30 transition-all hover:border-white/25 hover:text-white/60"
-              >
-                <ImageIcon size={20} />
-                <span className="text-xs">Select from media library</span>
-              </button>
             )}
-            {/* <label
+            <label
               className={cn(
                 "flex items-center justify-center rounded-xl border border-dashed border-white/10 px-4 py-3 text-xs text-white/30 hover:border-white/25 hover:text-white/60 transition-all cursor-pointer",
                 coverUploading && "animate-pulse",
@@ -260,8 +239,21 @@ export function BlogEditorView({ post, categories, tags }: Props) {
                 : form.coverImage
                   ? "Replace cover"
                   : "Upload cover"}
-            </label> */}
-          </div>
+            </label>
+          </div> */}
+
+          <ImageUploadInput
+            value={
+              form.coverImage
+                ? { url: form.coverImage, utKey: form.coverImageUtKey }
+                : null
+            }
+            onChange={(val) => {
+              setField("coverImage", val?.url ?? "");
+              setField("coverImageUtKey", val?.utKey ?? "");
+            }}
+            aspectRatio="video"
+          />
 
           {/* Category */}
           <div className="rounded-2xl border border-white/8 bg-white/3 p-5 space-y-3">

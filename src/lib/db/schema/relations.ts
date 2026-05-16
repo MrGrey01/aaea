@@ -5,13 +5,9 @@ import { accounts } from "./account";
 import { sessions } from "./session";
 import { sections, statItems, featureItems } from "./components";
 import { blogPosts, blogCategories, blogTags, blogPostTags } from "./blog";
-import {
-  bookings,
-  bookingSlotReservations,
-  bookingTimeSlots,
-} from "./bookings";
 
-export const userRelations = relations(users, ({ many }) => ({}));
+import { media } from "./media";
+import { albums, mediaAlbums, mediaUsage } from "./albums";
 
 export const usersRelations = relations(users, ({ many }) => ({
   sessions: many(sessions),
@@ -36,9 +32,6 @@ export const featureItemsRelations = relations(featureItems, ({ one }) => ({
     references: [sections.id],
   }),
 }));
-
-// blog
-// lib/db/schema/relations.ts — add these
 
 export const blogPostsRelations = relations(blogPosts, ({ one, many }) => ({
   author: one(users, { fields: [blogPosts.authorId], references: [users.id] }),
@@ -71,16 +64,34 @@ export const blogPostTagsRelations = relations(blogPostTags, ({ one }) => ({
   }),
 }));
 
-export const bookingSlotReservationsRelations = relations(
-  bookingSlotReservations,
-  ({ one }) => ({
-    booking: one(bookings, {
-      fields: [bookingSlotReservations.bookingId],
-      references: [bookings.id],
-    }),
-    timeSlot: one(bookingTimeSlots, {
-      fields: [bookingSlotReservations.timeSlotId],
-      references: [bookingTimeSlots.id],
-    }),
+export const mediaRelations = relations(media, ({ one, many }) => ({
+  uploadedBy: one(users, {
+    fields: [media.uploadedBy],
+    references: [users.id],
   }),
-);
+  mediaAlbums: many(mediaAlbums),
+  usages: many(mediaUsage),
+}));
+
+export const mediaAlbumsRelations = relations(mediaAlbums, ({ one }) => ({
+  media: one(media, {
+    fields: [mediaAlbums.mediaId],
+    references: [media.id],
+  }),
+  album: one(albums, {
+    fields: [mediaAlbums.albumId],
+    references: [albums.id],
+  }),
+}));
+
+export const mediaUsageRelations = relations(mediaUsage, ({ one }) => ({
+  media: one(media, {
+    fields: [mediaUsage.mediaId],
+    references: [media.id],
+  }),
+}));
+
+// ── Relations ────────────────────────────────────────────────────────────────
+export const albumsRelations = relations(albums, ({ many }) => ({
+  mediaAlbums: many(mediaAlbums),
+}));

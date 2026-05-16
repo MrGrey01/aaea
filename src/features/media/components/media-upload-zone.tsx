@@ -13,6 +13,7 @@ import slugify from "slugify";
 import { getPlaiceholder } from "plaiceholder";
 import { useUploadThing } from "@/lib/uploadthing-client";
 import { orpc } from "@/lib/orpc-rq.client";
+// import { client } from "@/lib/orpc";
 
 interface MediaUploadZoneProps {
   albumId?: string;
@@ -23,34 +24,34 @@ export function MediaUploadZone({ albumId, onUploaded }: MediaUploadZoneProps) {
   const qc = useQueryClient();
 
   const { startUpload, isUploading } = useUploadThing("mediaUploader", {
-  onClientUploadComplete: async (res) => {
-    // DB record already created in onUploadComplete on the server.
-    // Just assign to album if needed, then refresh.
-    if (albumId) {
-      await Promise.all(
-        res.map((file) =>
-          orpc.media.assignToAlbum.call({
-            mediaId: file.serverData.id, // ✅ id comes back from server
-            albumId,
-          })
-        )
-      );
-    }
+    onClientUploadComplete: async (res) => {
+      // DB record already created in onUploadComplete on the server.
+      // Just assign to album if needed, then refresh.
+      if (albumId) {
+        await Promise.all(
+          res.map((file) =>
+            orpc.media.assignToAlbum.call({
+              mediaId: file.serverData.id, // ✅ id comes back from server
+              albumId,
+            }),
+          ),
+        );
+      }
 
-    qc.invalidateQueries({ queryKey: mediaKeys.all });
-    toast.success(`${res.length} image${res.length > 1 ? "s" : ""} uploaded`);
-    onUploaded?.();
-  },
-  onUploadError: (err) => {
-    toast.error(err.message ?? "Upload failed");
-  },
-});
+      qc.invalidateQueries({ queryKey: mediaKeys.all });
+      toast.success(`${res.length} image${res.length > 1 ? "s" : ""} uploaded`);
+      onUploaded?.();
+    },
+    onUploadError: (err) => {
+      toast.error(err.message ?? "Upload failed");
+    },
+  });
 
   const onDrop = useCallback(
     (files: File[]) => {
       startUpload(files);
     },
-    [startUpload]
+    [startUpload],
   );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({

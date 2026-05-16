@@ -31,18 +31,13 @@ const Layout = async ({ children }: Props) => {
         <header className="sticky top-0 z-20 border-b border-white/10 bg-black/30 backdrop-blur-md">
           <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 md:px-8">
             <Link href="/" className="inline-flex items-center gap-3">
-              <Image
-                src="/logos/logo.png"
-                alt="Diai Image Phactory"
-                width={32}
-                height={32}
-              />
+              <Image src="/logos/logo.png" alt="AAEA" width={32} height={32} />
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-white/60">
                   Gallery Access
                 </p>
                 <p className="text-sm font-medium text-white">
-                  Diai Image Phactory
+                  Abuja Aviation Excellence Awards
                 </p>
               </div>
             </Link>

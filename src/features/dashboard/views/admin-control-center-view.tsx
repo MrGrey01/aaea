@@ -17,7 +17,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-// import { getAdminDashboardData } from "@/lib/dashboard";
 import { DashboardShell } from "../components/dashboard-shell";
 import { DashboardStatCard } from "../components/dashboard-stat-card";
 
@@ -40,8 +39,6 @@ interface AdminControlCenterViewProps {
 export async function AdminControlCenterView({
   isSuperAdmin,
 }: AdminControlCenterViewProps) {
-  // const data = await getAdminDashboardData();
-
   return (
     <DashboardShell
       eyebrow={isSuperAdmin ? "Super Admin Control Center" : "Admin Overview"}
@@ -95,94 +92,7 @@ export async function AdminControlCenterView({
         />
       </section> */}
 
-      <section className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
-        <Card className="border border-border/70 bg-card/80 py-0">
-          <CardHeader className="border-b border-border/70 py-5">
-            <CardTitle>Recent users</CardTitle>
-            <CardDescription>
-              A quick pulse on who is joining and which role mix is forming.
-            </CardDescription>
-          </CardHeader>
-          {/* <CardContent className="space-y-3 p-5">
-            {data.recentUsers.map((user) => (
-              <div
-                key={user.id}
-                className="flex items-center justify-between gap-4 rounded-2xl border border-border/70 bg-background/50 px-4 py-3"
-              >
-                <div className="space-y-1">
-                  <p className="font-medium">{user.name ?? "Unnamed user"}</p>
-                  <p className="text-sm text-muted-foreground">{user.email}</p>
-                </div>
-                <div className="text-right text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  <p>{user.isAnonymous ? "guest" : user.role}</p>
-                  <p>{formatDate(user.createdAt)}</p>
-                </div>
-              </div>
-            ))}
-          </CardContent> */}
-        </Card>
-
-        <Card className="border border-border/70 bg-card/80 py-0">
-          <CardHeader className="border-b border-border/70 py-5">
-            <CardTitle>Recent albums</CardTitle>
-            <CardDescription>
-              The latest galleries created or updated across the whole platform.
-            </CardDescription>
-          </CardHeader>
-          {/* <CardContent className="space-y-3 p-5">
-            {data.recentAlbums.map((album) => (
-              <div
-                key={album.id}
-                className="flex items-center justify-between gap-4 rounded-2xl border border-border/70 bg-background/50 px-4 py-3"
-              >
-                <div className="space-y-1">
-                  <p className="font-medium">
-                    {album.title} | {album.slug}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {album.owner.name ?? album.owner.email}
-                  </p>
-                </div>
-                <div className="text-right text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  <p>{album.type}</p>
-                  <p>{album.visibility}</p>
-                </div>
-              </div>
-            ))}
-          </CardContent> */}
-        </Card>
-      </section>
-
       <section className="grid gap-4 xl:grid-cols-[1.1fr_0.9fr]">
-        <Card className="border border-border/70 bg-card/80 py-0">
-          <CardHeader className="border-b border-border/70 py-5">
-            <CardTitle>Latest gallery access activity</CardTitle>
-            <CardDescription>
-              The clearest signal that shared galleries are being opened and
-              reviewed.
-            </CardDescription>
-          </CardHeader>
-          {/* <CardContent className="space-y-3 p-5">
-            {data.recentAccesses.map((access) => (
-              <div
-                key={access.id}
-                className="flex items-center justify-between gap-4 rounded-2xl border border-border/70 bg-background/50 px-4 py-3"
-              >
-                <div className="space-y-1">
-                  <p className="font-medium">{access.album.title}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {access.visitorEmail}
-                  </p>
-                </div>
-                <div className="text-right text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  <p>{access.album.visibility}</p>
-                  <p>{formatDate(access.lastAccessedAt)}</p>
-                </div>
-              </div>
-            ))}
-          </CardContent> */}
-        </Card>
-
         <div className="grid gap-4">
           <Card className="border border-border/70 bg-card/80 py-0">
             <CardHeader className="border-b border-border/70 py-5">
@@ -194,25 +104,21 @@ export async function AdminControlCenterView({
                   <CameraIcon className="size-4 text-foreground" />
                   Photographers
                 </span>
-                <strong className="text-foreground">
-                  {/* {data.stats.photographers} */}
-                </strong>
+                <strong className="text-foreground">1</strong>
               </div>
               <div className="flex items-center justify-between rounded-2xl border border-border/70 bg-background/40 px-4 py-3">
                 <span className="inline-flex items-center gap-2">
                   <UserRoundIcon className="size-4 text-foreground" />
                   Clients
                 </span>
-                <strong className="text-foreground">
-                  {/* {data.stats.clientsCount} */}
-                </strong>
+                <strong className="text-foreground">1</strong>
               </div>
               <div className="flex items-center justify-between rounded-2xl border border-border/70 bg-background/40 px-4 py-3">
                 <span className="inline-flex items-center gap-2">
                   <ShieldCheckIcon className="size-4 text-foreground" />
                   Admin roles
                 </span>
-                {/* <strong className="text-foreground">{data.stats.admins}</strong> */}
+                <strong className="text-foreground">1</strong>
               </div>
               <Link
                 href="/dashboard/admin/bookings"

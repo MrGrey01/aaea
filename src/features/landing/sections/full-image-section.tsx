@@ -24,13 +24,12 @@ export const FullImageSection = ({ sectionData }: FullImageSectionProps) => {
             fontSize: "clamp(4.5rem, 12vw, 12rem)",
           }}
         >
-          WELCOME TO <br />
-          DIAL IMAGE PHACTORY
+          WELCOME TO AAEA
         </h1>
       </div>
       <Image
         src={image || "/images/bg/parallax-bg-transparent.png"}
-        alt={imageAlt || "Diphactory – digital designer and 3D renderer"}
+        alt={imageAlt || "AAEA – digital designer and 3D renderer"}
         fill
         priority
         sizes="100vw"

@@ -1,4 +1,5 @@
 "use client";
+import { BUSINESS_NAME } from "@/constants";
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 // import { ArrowRight, Gem, UserIcon } from "lucide-react";
@@ -144,10 +145,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
               className="absolute inset-0 h-full w-full xrounded-full bg-transparent border-b border-accent-brand"
             />
           )}
-          {/* <span className="relative z-20">{item.name}</span> */}
-          <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent-brand after:transition-all after:duration-300 group-hover:after:w-full">
-            {item.name}
-          </span>
+          <span className="relative ">{item.name}</span>
           <sup className="text-[9px] font-semibold leading-none text-muted-foreground transition-colors duration-200 group-hover:text-accent-brand">
             {item.number}
           </sup>
@@ -253,7 +251,7 @@ export const NavbarLogo = () => {
       {/* <Gem className="h-5 w-5 text-emerald-400" /> */}
       <Image
         src="/logos/logo.png"
-        alt="DIP"
+        alt={BUSINESS_NAME}
         width={32}
         height={32}
         className="object-contain w-8 h-8"
@@ -266,7 +264,7 @@ export const NavbarLogo = () => {
           lineHeight: 0.88,
         }}
       >
-        DIP
+        {BUSINESS_NAME}
       </span>
     </Link>
   );
@@ -285,7 +283,12 @@ export function NavLink({ href, label, number, className = "" }: NavLinkProps) {
       href={href}
       className={`group relative flex items-start gap-0.5 text-sm font-medium tracking-wide text-nav-link transition-colors duration-200 hover:text-white ${className}`}
     >
-      <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 group-hover:after:w-full">
+      <span
+        className={cn(
+          "relative",
+          // " after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 group-hover:after:w-full"
+        )}
+      >
         {label}
       </span>
       <sup className="text-[9px] font-semibold leading-none text-muted-foreground transition-colors duration-200 group-hover:text-accent-brand">

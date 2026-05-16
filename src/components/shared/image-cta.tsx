@@ -71,8 +71,8 @@ export function ImageCTA({
         >
           {/* Placeholder — swap with Next.js <Image> in production */}
           <Image
-            src={imageUrl || "/images/bg/image-cta-bg.jpg"}
-            alt="diai image phactory Campaign CTA"
+            src={imageUrl || "/images/bg/image-cta-bg.png"}
+            alt="AAEA Campaign CTA"
             fill
             sizes="100vw"
             className="w-full h-full object-cover object-top"
@@ -92,7 +92,9 @@ export function ImageCTA({
               fontSize: "clamp(36px, 6vw, 56px)",
             }}
           >
-            <span className="w-fit">{title || "DIAI IMAGE PHACTORY"}</span>
+            <span className="w-fit">
+              {title || "ABUJA AVIATION EXCELLENCE AWARDS"}
+            </span>
             <span
               className="hidden md:block text-accent-brand ml-0.5 leading-none"
               style={{ fontSize: "0.75em" }}
@@ -109,7 +111,7 @@ export function ImageCTA({
           {/* CTA Button */}
           <Link href={ctaLink || "/"}>
             <button className="mt-7 bg-accent-brand hover:bg-accent-brand-700 transition-colors duration-200 text-white text-[11px] font-bold uppercase tracking-[0.3em] px-9 py-3 rounded-sm cursor-pointer">
-              {ctaText || "Book Now"}
+              {ctaText || "Join Now"}
             </button>
           </Link>
         </div>

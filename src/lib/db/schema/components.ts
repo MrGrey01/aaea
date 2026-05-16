@@ -15,6 +15,18 @@ import {
   createUpdateSchema,
 } from "drizzle-zod";
 
+export const carouselImages = pgTable("carousel_images", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  src: text("src").notNull(),
+  alt: text("alt").notNull(),
+  utKey: text("ut_key"),
+  sortOrder: integer("sort_order").notNull().default(0),
+  isActive: boolean("is_active").notNull().default(true),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+export const carouselImageSelectSchema = createSelectSchema(carouselImages);
+export type CarouselImage = typeof carouselImages.$inferSelect;
 
 // Faq Data
 export const faqs = pgTable("faqs", {

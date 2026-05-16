@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Send, Calendar, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { Send, Calendar } from "lucide-react";
 import { SubmitButton } from "../components/submit-btn";
 import { Field } from "../components/fields";
 import { Sidebar } from "../components/sidebar";
@@ -11,8 +11,8 @@ import { Sidebar } from "../components/sidebar";
 type Tab = "contact" | "booking";
 
 const SESSION_TYPES = [
-  "Portrait",
-  "Wedding",
+  "Sponsorship",
+  "Partnership",
   "Brand / Commercial",
   "Editorial",
   "Event",
@@ -21,7 +21,7 @@ const SESSION_TYPES = [
 
 export const ContactSection = () => {
   const [tab, setTab] = useState<Tab>("contact");
-  const [selectedService, setSelectedService] = useState("Portrait");
+  const [selectedService, setSelectedService] = useState("Sponsorship");
 
   return (
     <>
@@ -49,7 +49,7 @@ export const ContactSection = () => {
                   />
                 )}
                 <span className="relative z-10">
-                  {t === "contact" ? "Send a message" : "Book a session"}
+                  {t === "contact" ? "Send a message" : "Become a Partner"}
                 </span>
               </button>
             ))}
@@ -118,7 +118,7 @@ const ContactForm = () => (
     <Field label="Message">
       <textarea
         className={`${inputCls} min-h-30 resize-y leading-relaxed`}
-        placeholder="Tell me what you have in mind..."
+        placeholder="Tell us what you have in mind..."
       />
     </Field>
     <SubmitButton label="SEND MESSAGE" icon={<Send className="h-4 w-4" />} />
@@ -137,7 +137,7 @@ const BookingForm = ({
   <div className="space-y-4">
     <div>
       <p className="mb-2.5 text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
-        Session type
+        Partnership type
       </p>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
         {SESSION_TYPES.map((s) => (

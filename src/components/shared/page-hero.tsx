@@ -12,11 +12,11 @@ interface PageHeroProps {
 }
 
 export function PageHero({
-  title = "About Dip",
-  badge = "©Dial image Phactory",
-  imageSrc = "/images/bg/bride-bg.jpg",
-  imageAlt = "Diphactory – page hero",
-  pageDesc = "Hi, I am Diai. I'm a photographer and highly talented visual artist with over a decade of experience in the field.",
+  title = "About Us",
+  badge = "©2026.",
+  imageSrc = "/images/bg/hero-bg.png",
+  imageAlt = "AAEA – page hero",
+  pageDesc = "",
 }: PageHeroProps) {
   return (
     <section
@@ -29,7 +29,7 @@ export function PageHero({
       <div className="absolute inset-0 z-0">
         {/* <Image
           src={imageSrc || "/images/hero-bg.png"}
-          alt={imageAlt || "Diphactory – digital designer and photographer"}
+          alt={imageAlt || "AAEA – digital designer and photographer"}
           fill
           priority
           sizes="100vw"
@@ -75,9 +75,9 @@ export function PageHero({
           // blockColor="#fe0100"
           >
             <h1
-              className="font-bold leading-[0.88] text-white select-none"
+              className="font-bold font-heading tracking-tighter text-white select-none"
               style={{
-                fontFamily: "var(--font-display)",
+                // fontFamily: "var(--font-display)",
                 fontSize: "clamp(3rem, 11vw, 10rem)",
                 lineHeight: 0.88,
               }}
@@ -88,11 +88,13 @@ export function PageHero({
           </BlockRevealAnime>
 
           {/* Bio blurb – bottom right */}
-          <BlockRevealAnime>
-            <p className="hidden md:block xmax-w-55 md:max-w-md text-right text-sm leading-relaxed text-muted-foreground shrink-0 mb-1 lg:mb-2">
-              {pageDesc}
-            </p>
-          </BlockRevealAnime>
+          {pageDesc && (
+            <BlockRevealAnime>
+              <p className="hidden md:block xmax-w-55 md:max-w-md text-right text-sm leading-relaxed text-muted-foreground shrink-0 mb-1 lg:mb-2">
+                {pageDesc}
+              </p>
+            </BlockRevealAnime>
+          )}
 
           <div className="rounded-full p-2.5 xborder xborder-white font-black">
             <ArrowDown className="animate-bounce" />

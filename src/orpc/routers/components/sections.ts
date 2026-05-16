@@ -1,6 +1,6 @@
 // orpc/routers/sections.ts
 import { ORPCError } from "@orpc/server";
-import { eq, and, asc } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { z } from "zod";
 import { protectedProcedure, publicProcedure } from "@/orpc/base";
 import {
@@ -46,8 +46,8 @@ const getBySlug = publicProcedure
       },
     });
 
-    if (!section) throw new ORPCError("NOT_FOUND");
-    return section;
+    // if (!section) throw new ORPCError("NOT_FOUND");
+    return section ?? null;
   });
 
 // Public — get all sections for a page

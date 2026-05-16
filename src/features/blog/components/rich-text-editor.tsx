@@ -35,12 +35,15 @@ export function RichTextEditor({ value, onChange, placeholder }: Props) {
 
   const editor = useEditor({
     extensions: [
-      StarterKit,
+      StarterKit.configure({
+        link: false, // Disable default link
+      }),
       Image.configure({ inline: false, allowBase64: false }),
       Link.configure({ openOnClick: false }),
       Placeholder.configure({ placeholder: placeholder ?? "Start writing..." }),
     ],
     content: value,
+    immediatelyRender: false,
     onUpdate: ({ editor }) => onChange(editor.getHTML()),
     editorProps: {
       attributes: {

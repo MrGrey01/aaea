@@ -14,16 +14,16 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function TestimonialsPage() {
-    const { jsonLd } = await buildSEO({
-      title: "Home",
-      image: "https://www.diphactory.com/images/bg/bride-bg.jpg", // 🔥 real content
-      path: "/",
-    });
-  
+  const { jsonLd } = await buildSEO({
+    title: "Home",
+    image: `${process.env.NEXT_PUBLIC_BASE_URL}/images/bg/hero-bg.png`,
+    path: "/",
+  });
+
   return (
     <>
-  <TestimonialsView />
+      <TestimonialsView />
       <JsonLd data={jsonLd} />
     </>
-);
+  );
 }

@@ -1,7 +1,6 @@
 // src/server/router.ts — root router
 import { base } from "@/orpc/base";
 import { userRouter } from "./user";
-import { bookingsRouter } from "./bookings";
 import { InferRouterInputs, InferRouterOutputs } from "@orpc/server";
 import { testimonialsRouter } from "./testimonials";
 import { blogRouter } from "./blog";
@@ -15,12 +14,11 @@ import { albumsRouter } from "./albums";
 export const router = base.router({
   siteConfig: siteConfigRouter,
   user: userRouter,
-  bookings: bookingsRouter,
   testimonials: testimonialsRouter,
 
-  media:        mediaRouter,
-  albums:       albumsRouter,
-  mediaUsage:   mediaUsageRouter,
+  media: mediaRouter,
+  albums: albumsRouter,
+  mediaUsage: mediaUsageRouter,
 
   faq: faqRouter,
   sections: sectionsRouter,

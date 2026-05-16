@@ -227,7 +227,7 @@ export function SiteConfigView({ initialConfig }: Props) {
               onChange={(e) => setField("email", e.target.value)}
               className={inputCls}
               type="email"
-              placeholder="info@diphactory.com"
+              placeholder="info@aaea.com.ng"
             />
           </Field>
           <div className="grid grid-cols-2 gap-4">

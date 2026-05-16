@@ -70,31 +70,25 @@ export async function PhotographerDashboardView({
         <DashboardStatCard
           label="Client Albums"
           value={1}
-          // value={data.stats.totalAlbums}
-          helper={`1 private and 1 public galleries`}
-          // helper={`${data.stats.privateAlbums} private and ${data.stats.publicAlbums} public galleries`}
+          helper={`${1} private and ${1} public galleries`}
           icon={FolderKanbanIcon}
         />
         <DashboardStatCard
           label="Uploaded Images"
           value={1}
-          // value={data.stats.totalImages}
           helper="All images currently available across your managed galleries"
           icon={ImagesIcon}
         />
         <DashboardStatCard
           label="Gallery Access"
           value={1}
-          // value={data.stats.totalAccesses}
           helper="Every verified entry into your public and private album links"
           icon={KeyRoundIcon}
         />
         <DashboardStatCard
           label="Favorites Picked"
           value={1}
-          // value={data.stats.totalFavorites}
-          helper={`captured leads are also tied to your shared galleries`}
-          // helper={`${data.stats.totalLeads} captured leads are also tied to your shared galleries`}
+          helper={`${1} captured leads are also tied to your shared galleries`}
           icon={HeartIcon}
         />
       </section>
@@ -216,14 +210,12 @@ export async function PhotographerDashboardView({
         <DashboardStatCard
           label="Public Galleries"
           value={1}
-          // value={data.stats.publicAlbums}
           helper="Lead-friendly album links that open after visitor details are captured"
           icon={GlobeIcon}
         />
         <DashboardStatCard
           label="Private Galleries"
           value={1}
-          // value={data.stats.privateAlbums}
           helper="Albums protected with invite email validation and a delivery code"
           icon={KeyRoundIcon}
         />

@@ -31,7 +31,7 @@ const PANELS = [
     sub: "Choose your preferred date and photography package. I'll confirm availability and lock in your booking.",
     tag: "Discovery",
     accent: "#e63025",
-    imageUrl: "/images/gallery/2.jpg",
+    imageUrl: "/images/fallback-bg.jpg",
   },
   {
     step: 2,
@@ -39,7 +39,7 @@ const PANELS = [
     sub: "We align on mood boards, locations, wardrobe, and the visual language that tells your story.",
     tag: "Planning",
     accent: "#f4a261",
-    imageUrl: "/images/gallery/3.jpg",
+    imageUrl: "/images/fallback-bg.jpg",
   },
   {
     step: 3,
@@ -47,7 +47,7 @@ const PANELS = [
     sub: "A focused, immersive session where every frame is crafted with intention. You bring the energy.",
     tag: "Execution",
     accent: "#2a9d8f",
-    imageUrl: "/images/gallery/4.jpg",
+    imageUrl: "/images/fallback-bg.jpg",
     // extraHeight: true,
   },
   {
@@ -56,7 +56,7 @@ const PANELS = [
     sub: "Retouched selects delivered in a private gallery within 7 days. Yours to keep, forever.",
     tag: "Delivery",
     accent: "#c77dff",
-    imageUrl: "/images/gallery/5.jpg",
+    imageUrl: "/images/fallback-bg.jpg",
   },
 ];
 

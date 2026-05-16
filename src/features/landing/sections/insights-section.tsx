@@ -110,7 +110,7 @@ export default function LatestInsights({
         {/* Subtitle */}
         <p className="max-w-md text-sm text-muted-foreground leading-relaxed">
           {sectionData?.subtitle ||
-            "Explore my blog for design tips, industry insights, and creative inspiration. From tutorials to thought pieces, there&apos;s something for every curious mind."}
+            "Explore blog for design tips, industry insights, and creative inspiration. From tutorials to thought pieces, there&apos;s something for every curious mind."}
         </p>
 
         {/* CTA + nav row */}

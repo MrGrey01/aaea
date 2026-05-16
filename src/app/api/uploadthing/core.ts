@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getPlaiceholder } from "plaiceholder";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
-import { UploadThingError } from "uploadthing/server";
 import { getSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { media } from "@/lib/db/schema";
@@ -20,8 +20,7 @@ async function requireAdmin() {
 }
 
 export const ourFileRouter = {
-
-  // photographer avatar uploader
+  // manager avatar uploader
   userAvatar: f({
     image: { maxFileSize: "4MB", maxFileCount: 1 },
   })
@@ -61,7 +60,6 @@ export const ourFileRouter = {
       return { uploadedBy: metadata.userId };
     }),
 
-
   // ── Media library uploader ────────────────────────────────────────────────
   mediaUploader: f({ image: { maxFileSize: "8MB", maxFileCount: 20 } })
     .middleware(async () => {
@@ -85,7 +83,7 @@ export const ourFileRouter = {
       // ── Image dimensions ────────────────────────────────────────────────
       // UploadThing provides these via appUrl metadata on some plans;
       // fall back to null if unavailable — update via media.update later
-      const width  = (file as any).width  ?? null;
+      const width = (file as any).width ?? null;
       const height = (file as any).height ?? null;
 
       // ── Unique slug ─────────────────────────────────────────────────────
@@ -100,29 +98,29 @@ export const ourFileRouter = {
       const [created] = await db
         .insert(media)
         .values({
-          utKey:       file.key,
-          utUrl:       file.ufsUrl,
+          utKey: file.key,
+          utUrl: file.ufsUrl,
           blurDataUrl,
-          filename:    file.name,
+          filename: file.name,
           slug,
-          alt:         "",
-          mimeType:    file.type ?? "image/jpeg",
-          size:        file.size,
+          alt: "",
+          mimeType: file.type ?? "image/jpeg",
+          size: file.size,
           width,
           height,
-          uploadedBy:  metadata.userId,
+          uploadedBy: metadata.userId,
         })
         .returning();
 
       // Return to client so onClientUploadComplete has the full DB record
       return {
-        id:          created.id,
-        utKey:       created.utKey,
-        utUrl:       created.utUrl,
+        id: created.id,
+        utKey: created.utKey,
+        utUrl: created.utUrl,
         blurDataUrl: created.blurDataUrl,
-        slug:        created.slug,
-        width:       created.width,
-        height:      created.height,
+        slug: created.slug,
+        width: created.width,
+        height: created.height,
       };
     }),
 } satisfies FileRouter;

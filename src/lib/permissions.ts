@@ -1,6 +1,10 @@
 // lib/roles.ts
-
-import { UserRole } from "./db/schema";
+export type UserRole =
+  | "user"
+  | "client"
+  | "photographer"
+  | "admin"
+  | "super_admin";
 
 export const isAdmin = (role?: UserRole | null) =>
   role === "admin" || role === "super_admin";

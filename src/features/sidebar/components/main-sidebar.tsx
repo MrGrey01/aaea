@@ -17,8 +17,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MainUserMenu } from "./main-user-menu";
 import { Logo } from "@/features/landing/components/nav/logo";
+import { UserRole } from "@/lib/permissions";
 import { sidebarGroups } from "@/datas/sidebar-config";
-import { UserRole } from "@/lib/db/schema";
 
 export const MainSidebar = () => {
   const pathname = usePathname();

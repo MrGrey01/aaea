@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // lib/sidebar-config.ts
-import { UserRole } from "@/lib/db/schema";
 import {
   ChartNoAxesCombinedIcon,
   ContactRoundIcon,
@@ -19,7 +18,7 @@ import {
   GalleryHorizontalEndIcon,
 } from "lucide-react";
 
-// import { UserRole } from "@/lib/permissions";
+import { UserRole } from "@/lib/permissions";
 
 type SidebarItem = {
   title: string;
@@ -49,11 +48,6 @@ export const sidebarGroups: SidebarGroupConfig[] = [
         icon: HomeIcon,
       },
       {
-        title: "Portfolio",
-        url: "/gallery",
-        icon: ImagesIcon,
-      },
-      {
         title: "Shared Albums",
         url: "/album",
         icon: Globe2Icon,
@@ -75,11 +69,6 @@ export const sidebarGroups: SidebarGroupConfig[] = [
         url: "/dashboard/clients",
         icon: ContactRoundIcon,
       },
-      {
-        title: "Leads",
-        url: "/dashboard/leads",
-        icon: InboxIcon,
-      },
     ],
   },
 
@@ -98,19 +87,9 @@ export const sidebarGroups: SidebarGroupConfig[] = [
         icon: ShieldCheckIcon,
       },
       {
-        title: "Bookings",
-        url: "/dashboard/admin/bookings",
-        icon: NotebookTabsIcon,
-      },
-      {
         title: "Testimonials",
         url: "/dashboard/admin/testimonials",
         icon: MessageSquareText,
-      },
-      {
-        title: "Gallery",
-        url: "/dashboard/admin/gallery",
-        icon: ImagesIcon,
       },
       {
         title: "Blog",
@@ -126,11 +105,6 @@ export const sidebarGroups: SidebarGroupConfig[] = [
         title: "Sections",
         url: "/dashboard/admin/templates/sections",
         icon: LayoutTemplateIcon,
-      },
-      {
-        title: "Carousel",
-        url: "/dashboard/admin/templates/carousel",
-        icon: GalleryHorizontalEndIcon,
       },
     ],
   },

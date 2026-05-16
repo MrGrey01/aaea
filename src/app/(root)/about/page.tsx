@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { metadata } = await buildSEO({
-    title: "About Us | Book a DIP Photography Session",
+    title: "About Us | Abuja Aviation Excellence Awards",
     path: "/",
   });
 
@@ -14,8 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AboutPage() {
   const { jsonLd } = await buildSEO({
-    title: "About Us | Book a DIP Photography Session",
-    image: "https://www.diphactory.com/images/bg/bride-bg.jpg", // 🔥 real content
+    title: "About Us | Abuja Aviation Excellence Awards",
+    image: `${process.env.NEXT_PUBLIC_BASE_URL}/images/bg/hero-bg.png`,
     path: "/",
   });
   return (

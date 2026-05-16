@@ -36,8 +36,8 @@ export default async function AboutPage() {
 
         {/* Hero */}
         <PageHero
-          title={aboutHeroData?.title || "About Dip"}
-          imageSrc={aboutHeroData?.image || "images/bg/bride-portrait.jpg"}
+          title={aboutHeroData?.title || "About Us"}
+          imageSrc={aboutHeroData?.image || "images/bg/hero-bg.png"}
         />
         <ExpertiseSection sectionData={aboutMeData} />
         <FAQSection faqs={faqs} />

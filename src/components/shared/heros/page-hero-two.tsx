@@ -50,7 +50,7 @@ export const PageHeroTwo = ({
     >
       <span
         className="pointer-events-none uppercase absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-        font-display text-[clamp(80px,18vw,160px)]
+        font-heading2 font-black text-[clamp(80px,18vw,160px)]
         leading-none text-border/30 select-none whitespace-nowrap"
         aria-hidden
       >
@@ -75,7 +75,7 @@ export const PageHeroTwo = ({
           />
         )}
 
-        <h1 className="font-display text-[clamp(44px,10vw,88px)] leading-[0.95] tracking-tight">
+        <h1 className="font-heading text-[clamp(44px,10vw,88px)] leading-[0.95] tracking-tight">
           <span className="block">{titleObj.first}</span>
           {titleObj.second && (
             <span className="block text-accent-brand">{titleObj.second}</span>

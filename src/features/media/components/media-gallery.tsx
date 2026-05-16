@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
@@ -20,12 +21,17 @@ export function MediaGallery() {
 
   const toggleSelect = (item: MediaItem) => {
     setSelectedIds((prev) =>
-      prev.includes(item.id) ? prev.filter((id) => id !== item.id) : [...prev, item.id],
+      prev.includes(item.id)
+        ? prev.filter((id) => id !== item.id)
+        : [...prev, item.id],
     );
   };
 
   const handleBulkDelete = () => {
-    if (!confirm(`Delete ${selectedIds.length} image(s)? This cannot be undone.`)) return;
+    if (
+      !confirm(`Delete ${selectedIds.length} image(s)? This cannot be undone.`)
+    )
+      return;
     deleteBulk(selectedIds, {
       onSuccess: (res) => {
         toast.success(`${res.deleted} image(s) deleted`);
@@ -41,7 +47,9 @@ export function MediaGallery() {
       <header className="flex items-center gap-3 border-b border-white/10 px-6 py-4">
         <div>
           <h1 className="text-base font-semibold text-white">Media Library</h1>
-          <p className="text-xs text-white/30">Manage your uploaded images and albums</p>
+          <p className="text-xs text-white/30">
+            Manage your uploaded images and albums
+          </p>
         </div>
 
         <div className="ml-auto flex items-center gap-2">

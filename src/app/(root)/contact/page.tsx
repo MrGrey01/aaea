@@ -5,9 +5,9 @@ import { JsonLd } from "@/components/seo/json-ld";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { metadata } = await buildSEO({
-    title: "Contact Us | Book a DIP Photography Session",
+    title: "Contact Us | Join AAEA",
     description:
-      "Get in touch to book your photography or videography session. We’d love to capture your special moments—reach out today.",
+      "Get in touch with us today. We’d love to capture your special moments—reach out today.",
     keywords: [
       "contact photographer",
       "book photography session",
@@ -22,9 +22,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
   const { jsonLd } = await buildSEO({
-    title: "Bookings | Book a Photography Session",
-    image: "https://www.diphactory.com/images/bg/bride-bg.jpg", // 🔥 real content
-    path: "/bookings",
+    title: "Contact Us",
+    image: `${process.env.NEXT_PUBLIC_BASE_URL}/images/bg/hero-bg.png`,
+    path: "/contact",
   });
 
   return (

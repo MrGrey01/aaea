@@ -3,13 +3,15 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 import { useGSAP } from "@gsap/react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const ArtSection = () => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  // const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useIsMobile();
 
   useGSAP(() => {
     const start = isMobile ? "top 20%" : "top top";

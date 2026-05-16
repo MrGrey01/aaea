@@ -52,7 +52,7 @@ export function ExpertiseSection({ sectionData }: ExpertiseSectionProps) {
         <div className="flex-1 flex flex-col items-start">
           {/* Pill badge */}
           <SectionBadge
-            label="Photography Expert"
+            label="Why Us"
             className="w-fit text-xs font-medium mb-3 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border text-accent-brand"
             icon={<ExpertIcon />}
           />
@@ -77,9 +77,7 @@ export function ExpertiseSection({ sectionData }: ExpertiseSectionProps) {
           <div className="flex items-center gap-6 flex-wrap">
             {/* Reusable animated button */}
             <Link href={sectionData?.ctaLink || "/gallery"}>
-              <AnimatedButton
-                label={sectionData?.ctaText || "View portfolio"}
-              />
+              <AnimatedButton label={sectionData?.ctaText || "View Gallery"} />
             </Link>
 
             {/* Stars + rating */}

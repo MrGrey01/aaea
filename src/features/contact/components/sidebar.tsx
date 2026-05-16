@@ -8,7 +8,7 @@ export const Sidebar = () => {
           Get in touch
         </p>
         {[
-          { Icon: Mail, label: "Email", value: "hello@diphactory.com" },
+          { Icon: Mail, label: "Email", value: "hello@aaea.com.ng" },
           { Icon: Phone, label: "Phone", value: "+1 810 000 0000" },
           { Icon: MapPin, label: "Studio", value: "Texas, USA" },
         ].map(({ Icon, label, value }) => (

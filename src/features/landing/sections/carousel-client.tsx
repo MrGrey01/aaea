@@ -27,7 +27,7 @@ interface ImageCard {
 
 const FAN_CARDS: ImageCard[] = [
   {
-    src: "/images/gallery/1.jpg",
+    src: "/images/fallback-bg.jpg",
     alt: "Portrait – man in coat 1",
     mxValue: "mx-6",
     rotateY: 77.5,
@@ -41,7 +41,7 @@ const FAN_CARDS: ImageCard[] = [
     clipLeft: true,
   },
   {
-    src: "/images/gallery/2.jpg",
+    src: "/images/fallback-bg.jpg",
     alt: "Product – perfume bottle on dark silk 2",
     mxValue: "mx-4",
     rotateY: 57.5,
@@ -54,7 +54,7 @@ const FAN_CARDS: ImageCard[] = [
     heightOffset: 4,
   },
   {
-    src: "/images/gallery/3.jpg",
+    src: "/images/fallback-bg.jpg",
     alt: "Automotive – car front close-up 3",
     mxValue: "mx-3",
     rotateY: 37.5,
@@ -67,7 +67,7 @@ const FAN_CARDS: ImageCard[] = [
     heightOffset: 3,
   },
   {
-    src: "/images/gallery/4.jpg",
+    src: "/images/fallback-bg.jpg",
     alt: "Beauty – woman with hands on face 4",
     mxValue: "mx-2",
     rotateY: 20.5,
@@ -80,7 +80,7 @@ const FAN_CARDS: ImageCard[] = [
     heightOffset: 2,
   },
   {
-    src: "/images/gallery/5.jpg",
+    src: "/images/fallback-bg.jpg",
     alt: "Beauty – woman center image 5",
     mxValue: "mx-2",
     rotateY: 0,
@@ -93,7 +93,7 @@ const FAN_CARDS: ImageCard[] = [
     heightOffset: 1.5,
   },
   {
-    src: "/images/gallery/6.jpg",
+    src: "/images/fallback-bg.jpg",
     alt: "Product – wine bottle on dark draped silk 6",
     mxValue: "mx-2",
     rotateY: -20.5,
@@ -106,7 +106,7 @@ const FAN_CARDS: ImageCard[] = [
     heightOffset: 2,
   },
   {
-    src: "/images/gallery/7.jpg",
+    src: "/images/fallback-bg.jpg",
     alt: "Automotive – car front close-up 7",
     mxValue: "mx-3",
     rotateY: -37.5,
@@ -119,7 +119,7 @@ const FAN_CARDS: ImageCard[] = [
     heightOffset: 3,
   },
   {
-    src: "/images/gallery/8.jpg",
+    src: "/images/fallback-bg.jpg",
     alt: "Automotive – car front close-up 8",
     mxValue: "mx-4",
     rotateY: -57.5,
@@ -132,7 +132,7 @@ const FAN_CARDS: ImageCard[] = [
     heightOffset: 4,
   },
   {
-    src: "/images/gallery/9.jpg",
+    src: "/images/fallback-bg.jpg",
     alt: "Automotive – car front close-up 9",
     mxValue: "mx-6",
     rotateY: -77.5,

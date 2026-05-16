@@ -13,3 +13,17 @@ export const ROLE_HIERARCHY: Record<UserRole, number> = {
 
 export const hasRole = (userRole: UserRole, requiredRole: UserRole) =>
   ROLE_HIERARCHY[userRole] >= ROLE_HIERARCHY[requiredRole];
+
+// export async function requireMinRole(requiredRole: UserRole) {
+//   const session = await getSession();
+
+//   if (!session?.user) {
+//     throw new Error("Unauthorized");
+//   }
+
+//   if (!hasRole(session.user.role as UserRole, requiredRole)) {
+//     throw new Error(`Requires ${requiredRole} or higher`);
+//   }
+
+//   return session.user;
+// }

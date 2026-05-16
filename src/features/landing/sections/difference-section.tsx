@@ -19,14 +19,14 @@ interface DifferenceSectionProps {
 // ─── Mosaic image placeholders ─────────────────────────────────────────────────
 // Replace these src values with real gallery images
 const MOSAIC_IMAGES = [
-  { src: "/images/gallery/1.jpg", alt: "Editorial portrait" },
-  { src: "/images/gallery/2.jpg", alt: "Black and white portrait" },
-  { src: "/images/gallery/3.jpg", alt: "Fashion editorial" },
-  { src: "/images/gallery/4.jpg", alt: "Studio portrait" },
-  { src: "/images/gallery/5.jpg", alt: "Product photography" },
-  { src: "/images/gallery/6.jpg", alt: "Lifestyle photography" },
-  { src: "/images/gallery/7.jpg", alt: "Outdoor portrait" },
-  { src: "/images/gallery/8.jpg", alt: "Color portrait" },
+  { src: "/images/fallback-bg.png", alt: "Editorial portrait" },
+  { src: "/images/fallback-bg.png", alt: "Black and white portrait" },
+  { src: "/images/fallback-bg.png", alt: "Fashion editorial" },
+  { src: "/images/fallback-bg.png", alt: "Studio portrait" },
+  { src: "/images/fallback-bg.png", alt: "Product photography" },
+  { src: "/images/fallback-bg.png", alt: "Lifestyle photography" },
+  { src: "/images/fallback-bg.png", alt: "Outdoor portrait" },
+  { src: "/images/fallback-bg.png", alt: "Color portrait" },
 ];
 
 // ─── Main Component ────────────────────────────────────────────────────────────
@@ -37,7 +37,7 @@ export function DifferenceSection({
   return (
     <section
       className="relative xmin-h-screen flex flex-col items-center md:justify-end overflow-hidden bg-[#0a0a0a] pt-14 pb-0"
-      aria-label="About the photographer"
+      aria-label="About the manager"
     >
       {/* Background image */}
       <div className="absolute inset-0">
@@ -124,7 +124,7 @@ export function DifferenceSection({
             style={{ aspectRatio: "3/2.2" }}
           >
             <ParallaxImage
-              src="/images/gallery/9.jpg"
+              src="/images/fallback-bg.jpg"
               alt="Photography – woman in red standing in golden field"
             />
             {/* Gradient overlay */}
@@ -166,7 +166,7 @@ export function DifferenceSection({
             style={{ aspectRatio: "16/9" }}
           >
             <Image
-              src={galleryData?.image || "/images/gallery/10.jpg"}
+              src={galleryData?.image || "/images/fallback-bg.jpg"}
               alt={
                 galleryData?.imageAlt ||
                 "Portrait – man with authentic expression"

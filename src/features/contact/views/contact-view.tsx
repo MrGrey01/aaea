@@ -29,16 +29,19 @@ export default async function ContactView() {
         {/* <PageHero title="Contact DIP" /> */}
         <PageHero
           badge={ContactHeroData?.badge || "©2026"}
-          title={ContactHeroData?.title || "About Dip"}
-          pageDesc={ContactHeroData?.subtitle || "About Dip"}
-          imageSrc={ContactHeroData?.image || "images/bg/bride-portrait.jpg"}
+          title={ContactHeroData?.title || "Contact"}
+          pageDesc={
+            ContactHeroData?.subtitle ||
+            "Contact us to for more information, partnerships and sponsorship opportunities"
+          }
+          imageSrc={ContactHeroData?.image || "images/bg/hero-bg.png"}
         />
         <div className="max-w-7xl mx-auto min-h-screen">
           {/* div className="min-h-screen bg-background text-foreground" */}
           {/* ── PAGE HEADER ── */}
           <PageHeroTwo
             label={ContactHeaderData?.title || "CONTACT US"}
-            badge={ContactHeaderData?.badge || "Available for bookings"}
+            badge={ContactHeaderData?.badge || "Join Us"}
             title={ContactHeaderData?.subtitle || ""}
             subTitle={
               ContactHeaderData?.description ||

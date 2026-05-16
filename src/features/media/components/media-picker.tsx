@@ -13,8 +13,15 @@ import type { MediaItem } from "@/types/router-types";
 type Tab = "browse" | "upload";
 
 export function MediaPicker() {
-  const { isOpen, onSelect, albumFilter, search, close, setAlbumFilter, setSearch } =
-    useMediaPicker();
+  const {
+    isOpen,
+    onSelect,
+    albumFilter,
+    search,
+    close,
+    setAlbumFilter,
+    setSearch,
+  } = useMediaPicker();
 
   const [tab, setTab] = useState<Tab>("browse");
   const [selected, setSelected] = useState<MediaItem | null>(null);
@@ -62,7 +69,9 @@ export function MediaPicker() {
             {/* ── Header ── */}
             <div className="flex items-center gap-3 border-b border-white/10 px-5 py-3.5">
               <LayoutGrid size={17} className="text-gold-500" />
-              <h2 className="text-sm font-semibold text-white">Media Library</h2>
+              <h2 className="text-sm font-semibold text-white">
+                Media Library
+              </h2>
 
               <div className="ml-auto flex items-center gap-2">
                 {/* Tabs */}
@@ -78,7 +87,9 @@ export function MediaPicker() {
                           : "text-white/40 hover:text-white/70",
                       )}
                     >
-                      {t === "upload" && <Upload size={11} className="mr-1.5 inline" />}
+                      {t === "upload" && (
+                        <Upload size={11} className="mr-1.5 inline" />
+                      )}
                       {t}
                     </button>
                   ))}
@@ -99,7 +110,10 @@ export function MediaPicker() {
               {tab === "browse" ? (
                 <>
                   {/* Sidebar */}
-                  <AlbumSidebar selected={albumFilter} onSelect={setAlbumFilter} />
+                  <AlbumSidebar
+                    selected={albumFilter}
+                    onSelect={setAlbumFilter}
+                  />
 
                   {/* Main content */}
                   <div className="flex flex-1 flex-col overflow-hidden">
@@ -165,7 +179,7 @@ export function MediaPicker() {
                   className={cn(
                     "flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-all",
                     selected
-                      ? "bg-gold-500 text-black hover:bg-gold-400"
+                      ? "bg-blue-500 text-black hover:bg-blue-400"
                       : "cursor-not-allowed bg-white/5 text-white/20",
                   )}
                 >

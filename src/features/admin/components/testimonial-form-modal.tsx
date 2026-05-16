@@ -5,7 +5,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { client } from "@/lib/orpc";
 import { SelectTestimonial } from "@/lib/db/schema/testimonials";
-import { InputField } from "@/features/bookings/components/input-field";
+import { InputField } from "@/components/shared/forms/input-field";
 import { TextareaField } from "@/components/shared/forms/text-area-field";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
