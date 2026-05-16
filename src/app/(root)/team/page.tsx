@@ -1,5 +1,5 @@
 import { JsonLd } from "@/components/seo/json-ld";
-import AboutView from "@/features/about/views/about-view";
+import TeamView from "@/features/about/views/team-view";
 import { buildSEO } from "@/lib/seo/engine";
 import type { Metadata } from "next";
 
@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return metadata;
 }
 
-export default async function AboutPage() {
+export default async function TeamPage() {
   const { jsonLd } = await buildSEO({
     title: "Team Members | Abuja Aviation Excellence Awards",
     image: `${process.env.NEXT_PUBLIC_BASE_URL}/images/bg/hero-bg.png`,
@@ -20,7 +20,7 @@ export default async function AboutPage() {
   });
   return (
     <>
-      <AboutView />
+      <TeamView />
       <JsonLd data={jsonLd} />
     </>
   );

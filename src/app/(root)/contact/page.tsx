@@ -9,10 +9,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Get in touch with us today. We’d love to capture your special moments—reach out today.",
     keywords: [
-      "contact photographer",
-      "book photography session",
-      "hire photographer",
-      "photography inquiry",
+      "contact Us",
+      "partner with us",
+      "Sponsorship inquiry",
+      "inquiry",
     ],
     path: "/contact",
   });

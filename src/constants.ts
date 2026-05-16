@@ -1,4 +1,7 @@
 export const APP_NAME = "Abuja Aviation Excellence Awards";
+export const TAGLINE = "Recognizing Excellence, Elevating Aviation";
+export const DESCRIPTION =
+  "Celebrating innovation, excellence, and leadership in the aviation industry. Join us for an unforgettable evening of recognition and networking.";
 export const BUSINESS_NAME = "Abuja Aviation Excellence Awards";
 export const BUSINESS_URL = "https://aaea.com.ng";
 export const BUSINESS_LOGO = "https://aaea.com.ng/images/logo.png";

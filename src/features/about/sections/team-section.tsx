@@ -3,44 +3,64 @@ import { FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const team = [
   {
-    name: "Aisha Bello",
-    role: "Executive Director",
+    name: "Ajayi Mustapha.A",
+    role: "Project Management",
+    img: "/images/team/ajayi-mustapha.jpg",
+  },
+  {
+    name: " Ibrahim Kabiru .M.",
+    role: "Administration & Coordination",
+    img: "/images/team/kabiru-mohammed.jpg",
+  },
+  {
+    name: "Mohammed Rabi.S.",
+    role: "Media & Communications",
     img: "/images/fallback.jpg",
   },
   {
-    name: "Chukwuemeka Obi",
-    role: "Head of Operations",
+    name: "Lekan Fatoki",
+    role: "Social Media Management",
     img: "/images/fallback.jpg",
   },
   {
-    name: "Fatima Al-Hassan",
-    role: "Director of Partnerships",
+    name: "Oluwatobiloba Anthony",
+    role: "Graphic Design",
+    img: "/images/team/anthony-oluwatobilola.jpg",
+  },
+  {
+    name: "Olanrewaju Abiodun Babalola",
+    role: "Photography & Videography",
+    img: "/images/team/babalola-olanrewaju.jpg",
+  },
+  {
+    name: "Lois Oluwapelumi",
+    role: "Content Writing & Copywriting",
+    img: "/images/team/lois-ajewole.jpg",
+  },
+  {
+    name: "Desmond Ajuh",
+    role: "Web Development / IT",
+    img: "/images/team/desmond-ajuh.jpg",
+  },
+  {
+    name: "Saka Daniyan",
+    role: "Marketing & Promotion",
     img: "/images/fallback.jpg",
   },
   {
-    name: "Oluwaseun Adeyemi",
-    role: "Chief Communications Officer",
+    name: "AJAYI MOJEED .O.",
+    role: "Finance / Accounting",
     img: "/images/fallback.jpg",
   },
   {
-    name: "Ngozi Eze",
-    role: "Awards & Nominations Lead",
+    name: "Abdulrazak Abdulganiyu",
+    role: "Legal Support",
     img: "/images/fallback.jpg",
   },
   {
-    name: "Babatunde Lawal",
-    role: "Strategy & Growth Director",
-    img: "/images/fallback.jpg",
-  },
-  {
-    name: "Amina Yusuf",
-    role: "Events & Experience Manager",
-    img: "/images/fallback.jpg",
-  },
-  {
-    name: "Emeka Nwosu",
-    role: "Technology & Media Lead",
-    img: "/images/fallback.jpg",
+    name: "Abraham Samuel .A",
+    role: "Research & Aviation Content",
+    img: "/images/team/abraham-samuel.jpg",
   },
 ];
 

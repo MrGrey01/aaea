@@ -69,13 +69,14 @@ export function ImageCTA({
           ref={bgRef}
           className="absolute inset-0 will-change-transform origin-center"
         >
+          {/* <div className="bg-brand-500 absolute inset-0 w-full h-full opacity-70" /> */}
           {/* Placeholder — swap with Next.js <Image> in production */}
           <Image
             src={imageUrl || "/images/bg/image-cta-bg.png"}
             alt="AAEA Campaign CTA"
             fill
             sizes="100vw"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-top opacity-50"
           />
 
           {/* Darkening overlay */}

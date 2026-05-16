@@ -10,10 +10,10 @@ type SEOInput = {
 };
 
 const DEFAULTS = {
-  title: "Photography & Videography | Capturing Timeless Moments",
+  title: "AAEA | Recognizing Excellence, Elevating Aviation",
   description:
-    "Professional photography and videography services specializing in weddings, portraits, and cinematic storytelling.",
-  image: "/og/home.jpg",
+    "Celebrating innovation, excellence, and leadership in the aviation industry. Join us for an unforgettable evening of recognition and networking.",
+  image: "/og/home.png",
 };
 
 export function buildMetadata({

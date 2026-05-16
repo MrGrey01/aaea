@@ -3,6 +3,7 @@
 import type { Metadata } from "next";
 import { getSiteConfig } from "@/lib/data/site-config";
 import { buildJsonLd } from "./jsonld";
+import { DESCRIPTION, TAGLINE } from "@/constants";
 
 type SEOInput = {
   title?: string;
@@ -14,10 +15,11 @@ type SEOInput = {
 };
 
 const DEFAULT_KEYWORDS = [
-  "photography",
+  "aviation awards",
+  "aviation in africa",
   "videography",
-  "wedding photographer",
-  "portrait photography",
+  "photographer",
+  "portrait aviation",
   "creative studio",
 ];
 
@@ -29,9 +31,7 @@ export async function buildSEO(input: SEOInput = {}) {
   const businessName = config?.businessName || "My Business";
 
   const title =
-    input.title ||
-    config?.metaTitle ||
-    `${businessName} | Photography & Videography`;
+    input.title || config?.metaTitle || `${businessName} | ${TAGLINE}`;
 
   const fullTitle = `${title} | ${businessName}`;
 
@@ -39,7 +39,7 @@ export async function buildSEO(input: SEOInput = {}) {
     input.description ||
     config?.metaDescription ||
     config?.description ||
-    "Professional photography and videography services.";
+    DESCRIPTION;
 
   const path = input.path || "/";
   const url = `${baseUrl}${path}`;

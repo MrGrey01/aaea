@@ -3,6 +3,7 @@ import { PageHero } from "@/components/shared/page-hero";
 import { ImageCTA } from "@/components/shared/image-cta";
 // import { client } from "@/lib/orpc";
 import TeamSection from "../sections/team-section";
+import OurStory from "../sections/our-story";
 
 export default async function TeamPage() {
   return (
@@ -19,7 +20,8 @@ export default async function TeamPage() {
         {/* Hero */}
         <PageHero title="Our Team" imageSrc="images/bg/hero-bg.png" />
         <TeamSection />
-        <ImageCTA className="bg-accent-brand-950" />
+        <OurStory />
+        <ImageCTA className="bg-brand-800" />
       </div>
     </ReactLenis>
   );
