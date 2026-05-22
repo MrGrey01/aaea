@@ -45,7 +45,7 @@ const galleryImages = [
 
 export default function OurStory() {
   return (
-    <section className="w-full bg-[#0b1a2e] font-sans">
+    <section className="w-full py-10 bg-[#0b1a2e] font-sans">
       {/* ── Top row: text + gallery ── */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-14 pb-10 flex flex-col lg:flex-row gap-10 lg:gap-5 items-start">
         {/* Left: text block */}
@@ -66,8 +66,8 @@ export default function OurStory() {
           <p className="text-white/60 text-sm leading-relaxed mb-7">
             Founded to spotlight the achievements and contributions of
             individuals, organizations, and institutions in aviation, AAEA
-            brings together industry leaders, innovators, and changemakers for a
-            night of recognition, networking, and inspiration.
+            brings together industry leaders, innovators, and changemakers for
+            recognition, networking, and inspiration.
           </p>
 
           {/* Watch CTA */}
@@ -83,12 +83,11 @@ export default function OurStory() {
         </div>
 
         {/* Right: image gallery */}
-        <div className="flex-1 grid grid-cols-4 gap-3 min-h-55 h-full">
+        <div className="flex-1 grid grid-cols-4 gap-3 min-h-24 md:min-h-55 md:h-full">
           {galleryImages.map((img, i) => (
             <div
               key={i}
-              className="relative rounded-2xl overflow-hidden bg-white/5"
-              style={{ aspectRatio: "3/4" }}
+              className="relative rounded-2xl overflow-hidden bg-white/5 aspect-3/4 md:aspect-2/4"
             >
               <img
                 src={img.src}
@@ -103,14 +102,14 @@ export default function OurStory() {
       </div>
 
       {/* ── Divider ── */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+      <div className="md:hidden max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         <div className="h-px bg-white/10" />
       </div>
 
       {/* ── Stats bar ── */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-8 flex flex-col sm:flex-row items-start sm:items-center gap-8 sm:gap-0">
+      <div className="max-w-6xl mx-auto xmd:px-10 xlg:px-16 py-8 flex flex-col sm:flex-row items-start sm:items-center gap-8 sm:gap-0 md:border-2 md:border-gold-500 rounded-lg">
         {/* Label */}
-        <div className="sm:w-[220px] xl:w-[260px] shrink-0 sm:border-r border-white/15 sm:pr-10">
+        <div className="flex md:min-h-24 items-center mx-auto sm:min-w-55 md:min-w-65 shrink-0 sm:border-r border-gold-500/40 sm:px-10">
           <h3 className="font-heading text-2xl md:text-3xl font-bold text-white leading-tight">
             Our Impact
             <br />
@@ -119,21 +118,24 @@ export default function OurStory() {
         </div>
 
         {/* Stats */}
-        <div className="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-0 sm:divide-x divide-white/10 sm:pl-10">
+        <div className="mx-auto flex-1 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-0 sm:divide-x divide-gold-500/40 px-6 rounded-xl bg-gold-500/5 sm:bg-transparent">
           {stats.map(({ icon: Icon, value, label }) => (
             <div
               key={label}
-              className="flex flex-col items-start sm:items-center sm:px-6 gap-2"
+              className="flex flex-col item-center sm:px-6 gap-2"
+              style={{
+                alignItems: "center",
+              }}
             >
               <Icon
                 size={28}
                 className="text-[#C9922A] mb-1"
                 strokeWidth={1.5}
               />
-              <span className="text-white text-2xl md:text-3xl font-bold tracking-tight">
+              <span className="text-white text-2xl md:text-3xl text-center font-bold tracking-tight">
                 {value}
               </span>
-              <span className="text-white/50 text-[12px] text-center leading-tight">
+              <span className="text-white/50 text-sm text-center leading-tight">
                 {label}
               </span>
             </div>

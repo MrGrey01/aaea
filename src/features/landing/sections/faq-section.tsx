@@ -16,7 +16,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
   const toggle = (id: string) => setOpenId((prev) => (prev === id ? null : id));
 
   return (
-    <section className="w-full px-8 py-16 bg-accent-brand-50/5">
+    <section className="w-full px-8 py-16 bg-brand-500/50">
       <div className="max-w-6xl w-full mx-auto">
         {/* Top border */}
         {/* <div className="border-t border-gray-200 mb-12" /> */}

@@ -4,7 +4,11 @@ import { ImageCTA } from "@/components/shared/image-cta";
 import { FAQSection } from "@/features/landing/sections/faq-section";
 import LatestInsights from "@/features/landing/sections/insights-section";
 import { ExpertiseSection } from "@/features/about/sections/expertise-section";
+import { WhyUs } from "@/features/about/sections/why-us";
 import { client } from "@/lib/orpc";
+import OurStory from "../sections/our-story";
+import AboutHeroSection from "../sections/about-info";
+import { MissionSection } from "../sections/mission";
 
 export default async function AboutPage() {
   // const faqs = await client.faq.list();
@@ -40,6 +44,10 @@ export default async function AboutPage() {
           imageSrc={aboutHeroData?.image || "images/bg/hero-bg.png"}
         />
         <ExpertiseSection sectionData={aboutMeData} />
+        <AboutHeroSection />
+        <OurStory />
+        <MissionSection />
+        <WhyUs />
         <FAQSection faqs={faqs} />
         <ImageCTA
           title={aboutCtaData?.title || ""}

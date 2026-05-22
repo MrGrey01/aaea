@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import AnimatedButton from "@/components/shared/animated-button";
 import { SectionBadge } from "@/components/shared/section-badge";
 import ParallaxImage from "@/components/shared/parallax-image";
@@ -35,7 +34,7 @@ interface ExpertiseSectionProps {
 
 export function ExpertiseSection({ sectionData }: ExpertiseSectionProps) {
   return (
-    <section className="w-full px-6 py-12 md:px-12 md:py-16">
+    <section className="w-full px-6 py-12 md:px-12 md:py-16 bg-brand">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
         {/* ── Left: Image ── */}
         <div className="w-full md:w-[54%] shrink-0 relative">

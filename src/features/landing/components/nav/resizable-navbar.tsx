@@ -256,16 +256,15 @@ export const NavbarLogo = () => {
         height={32}
         className="object-contain w-8 h-8"
       />
-      <span
+      {/* <span
         className="font-medium text-3xl text-accent-brand dark:text-white uppercase"
         style={{
           fontFamily: "var(--font-display)",
-          // fontSize: "clamp(4rem, 14vw, 13rem)",
           lineHeight: 0.88,
         }}
       >
         {BUSINESS_NAME}
-      </span>
+      </span> */}
     </Link>
   );
 };

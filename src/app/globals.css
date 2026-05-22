@@ -85,6 +85,7 @@
      BRAND SCALE
   ========================== */
 
+  --color-brand: var(--brand);
   --color-brand-50: var(--brand-50);
   --color-brand-100: var(--brand-100);
   --color-brand-200: var(--brand-200);
@@ -135,6 +136,7 @@
 
 
   /* BRAND SCALE */
+  --brand: oklch(17.276% 0.05929 256.144);
   --brand-50: oklch(0.985 0.004 260);
   --brand-100: oklch(0.962 0.008 258);
   --brand-200: oklch(0.91 0.02 258);

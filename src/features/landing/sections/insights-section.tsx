@@ -69,7 +69,7 @@ export default function LatestInsights({
   };
 
   return (
-    <section className="w-full px-8 py-20 overflow-hidden relative">
+    <section className="w-full px-8 py-20 overflow-hidden relative bg-brand-500/50">
       {/* Background effects */}
       <SectionBg className="" />
 
@@ -118,7 +118,7 @@ export default function LatestInsights({
           {/* View articles button */}
           <Link href={sectionData?.ctaLink || "/blog"}>
             <button className="flex items-center gap-2 pl-1.5 pr-5 py-1.5 rounded-full bg-white border border-gray-200 text-sm font-medium text-gray-800 shadow-sm hover:shadow-md transition-shadow">
-              <span className="w-8 h-8 rounded-full bg-accent-brand flex items-center justify-center shrink-0 text-white">
+              <span className="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center shrink-0 text-white">
                 <ArrowRight2 />
               </span>
               {sectionData?.ctaText || "View articles"}
@@ -130,14 +130,14 @@ export default function LatestInsights({
             <button
               onClick={() => slide("prev")}
               disabled={index === 0}
-              className="w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-accent-brand-950 hover:text-gray-500 hover:border-gray-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              className="w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gold-950 hover:text-gray-500 hover:border-gray-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
               <ArrowLeft />
             </button>
             <button
               onClick={() => slide("next")}
               disabled={index === maxIndex}
-              className="w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-accent-brand-950 hover:text-gray-500 hover:border-gray-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              className="w-9 h-9 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gold-950 hover:text-gray-500 hover:border-gray-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
               <ArrowRight />
             </button>

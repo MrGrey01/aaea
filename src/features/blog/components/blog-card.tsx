@@ -9,7 +9,7 @@ export const BlogPostCard = ({ post }: BlogCardProps) => {
   return (
     <article className="snap-start flex flex-col cursor-pointer group min-w-[80%] sm:min-w-[60%] md:min-w-0">
       {/* Image */}
-      <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden border-2 border-accent-brand-200/10">
+      <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden border-2 border-gold-500/10">
         <Image
           src={post.coverImage || "/images/fallback/post_image.png"}
           alt={post.title}
@@ -20,16 +20,16 @@ export const BlogPostCard = ({ post }: BlogCardProps) => {
       </div>
 
       {/* Meta */}
-      <div className="mt-4 flex items-center justify-between">
+      <div className="relative mt-4 flex items-center justify-between">
         <div>
-          <p className="text-[15px] font-bold text-muted-foreground">
+          <p className="text-[15px] font-bold text-muted-foreground max-w-4/5 line-clamp-2">
             <Link href={`/blog/${post.slug}`}>{post.title}</Link>
           </p>
-          <p className="text-xs text-accent-brand-400 mt-0.5">
+          <p className="text-xs text-gold-400 mt-0.5">
             {post.updatedAt.toLocaleDateString()}
           </p>
         </div>
-        <span className="text-xs text-gray-700 bg-accent-brand-100 hover:bg-accent-brand-200 transition-colors px-4 py-2 rounded-full font-medium shrink-0">
+        <span className="text-xs text-gray-700 bg-gold-400 hover:bg-gold-300 transition-colors px-4 py-2 rounded-full font-medium shrink-0">
           {post.category?.name ?? "Uncategorized"}
         </span>
       </div>

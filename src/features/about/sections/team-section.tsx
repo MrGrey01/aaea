@@ -20,7 +20,7 @@ const team = [
   {
     name: "Lekan Fatoki",
     role: "Social Media Management",
-    img: "/images/fallback.jpg",
+    img: "/images/adedara.jpg",
   },
   {
     name: "Oluwatobiloba Anthony",
@@ -45,7 +45,7 @@ const team = [
   {
     name: "Saka Daniyan",
     role: "Marketing & Promotion",
-    img: "/images/fallback.jpg",
+    img: "/images/team/daniyan.jpg",
   },
   {
     name: "AJAYI MOJEED .O.",
@@ -55,7 +55,7 @@ const team = [
   {
     name: "Abdulrazak Abdulganiyu",
     role: "Legal Support",
-    img: "/images/fallback.jpg",
+    img: "/images/team/abdulrazak.jpg",
   },
   {
     name: "Abraham Samuel .A",
@@ -85,7 +85,7 @@ export default function TeamSection() {
         </div>
 
         {/* ── Thin gold rule ── */}
-        <div className="h-px bg-gradient-to-r from-[#C9922A]/60 via-[#C9922A]/20 to-transparent mb-12" />
+        <div className="h-px bg-linear-to-r from-[#C9922A]/60 via-[#C9922A]/20 to-transparent mb-12" />
 
         {/* ── Team grid ── */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
