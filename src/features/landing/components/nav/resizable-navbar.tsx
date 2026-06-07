@@ -96,7 +96,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         boxShadow: visible
           ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
-        width: visible ? "70%" : "100%",
+        width: visible ? "80%" : "100%",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -108,8 +108,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-60 mx-auto hidden w-full xmax-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-6 md:px-10 lg:px-14 py-3 lg:flex dark:bg-transparent ",
-        "shadow-lg rounded-full border border-transparent animate-border",
+        "relative z-60 mx-auto hidden w-full xmax-w-7xl flex-row items-center justify-between self-start rounded-lg bg-transparent px-6 py-3 lg:flex dark:bg-transparent ",
+        "shadow-lg border border-transparent animate-border",
         visible ? "" : "mt-2",
         // "bg-white/80",
         className,
@@ -145,8 +145,8 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
               className="absolute inset-0 h-full w-full xrounded-full bg-transparent border-b border-accent-brand"
             />
           )}
-          <span className="relative ">{item.name}</span>
-          <sup className="text-[9px] font-semibold leading-none text-muted-foreground transition-colors duration-200 group-hover:text-accent-brand">
+          <span className="relative font-heading uppercase">{item.name}</span>
+          <sup className="hidden text-[9px] font-semibold leading-none text-muted-foreground transition-colors duration-200 group-hover:text-accent-brand">
             {item.number}
           </sup>
         </Link>

@@ -2,6 +2,7 @@
 import BlockRevealAnime from "@/components/shared/reveal-anime";
 import ParallaxImage from "@/components/shared/parallax-image";
 import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 interface PageHeroProps {
   title?: string;
@@ -20,29 +21,29 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section
-      className="relative w-full overflow-hidden bg-(--color-bg-primary)"
-      style={{ minHeight: "60svh" }}
+      className="relative w-full overflow-hidden bg-(--color-bg-primary) min-h-[40svh] md:min-h-[60svh]"
+      // style={{ minHeight: "60svh" }}
       aria-label="pageHero"
     >
       <div className="absolute inset-0 z-5 bg-linear-to-b from-black/72 via-transparent to-black/55" />
       {/* ── Full-bleed portrait ── */}
       <div className="absolute inset-0 z-0">
-        {/* <Image
-          src={imageSrc || "/images/hero-bg.png"}
-          alt={imageAlt || "AAEA – digital designer and photographer"}
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
           fill
           priority
           sizes="100vw"
           className="object-cover object-top opacity-80"
           style={{ objectPosition: "50% 15%" }}
-        /> */}
-        <ParallaxImage
+        />
+        {/* <ParallaxImage
           src={imageSrc}
           alt={imageAlt}
-          className="object-cover xobject-center opacity-100 w-full"
+          className="absolute object-cover xobject-center opacity-100 w-full"
           scale={1.1}
           style={{ objectPosition: "50% 55%" }}
-        />
+        /> */}
         {/* Gradient overlays – left, bottom, right */}
         <div
           className="absolute inset-0"
@@ -83,7 +84,7 @@ export function PageHero({
               }}
             >
               {title}
-              <span className="text-accent-brand">*</span>
+              {/* <span className="text-accent-brand">*</span> */}
             </h1>
           </BlockRevealAnime>
 

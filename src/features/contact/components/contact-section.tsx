@@ -7,6 +7,7 @@ import { Send, Calendar } from "lucide-react";
 import { SubmitButton } from "../components/submit-btn";
 import { Field } from "../components/fields";
 import { Sidebar } from "../components/sidebar";
+import { SiteConfig } from "@/lib/db/schema/site-config";
 
 type Tab = "contact" | "booking";
 
@@ -19,7 +20,11 @@ const SESSION_TYPES = [
   "Other",
 ];
 
-export const ContactSection = () => {
+interface ContactSectionProps {
+  config: SiteConfig;
+}
+
+export const ContactSection = ({ config }: ContactSectionProps) => {
   const [tab, setTab] = useState<Tab>("contact");
   const [selectedService, setSelectedService] = useState("Sponsorship");
 
@@ -28,7 +33,7 @@ export const ContactSection = () => {
       {/* ── BODY ── */}
       <div className="grid md:grid-cols-[1fr_1.6fr]">
         {/* Sidebar */}
-        <Sidebar />
+        <Sidebar siteConfig={config} />
 
         {/* Form area */}
         <main className="p-6 md:p-10">
@@ -44,7 +49,7 @@ export const ContactSection = () => {
                 {tab === t && (
                   <motion.span
                     layoutId="tab-indicator"
-                    className="absolute inset-0 bg-accent-brand"
+                    className="absolute inset-0 bg-gold-500"
                     style={{ borderRadius: "inherit" }}
                   />
                 )}
@@ -91,7 +96,7 @@ export const ContactSection = () => {
 
 const inputCls = `w-full rounded-lg border border-border bg-muted px-3.5 py-2.5 text-sm
   text-foreground outline-none placeholder:text-muted-foreground/50
-  focus:border-accent-brand focus:ring-2 focus:ring-accent-brand/10 transition-shadow`;
+  focus:border-gold-500 focus:ring-2 focus:ring-gold-500/10 transition-shadow`;
 
 // ── CONTACT FORM ─────────────────────────────────────────────
 
@@ -147,7 +152,7 @@ const BookingForm = ({
             className={`rounded-lg border py-2.5 text-sm transition-all
               ${
                 selectedService === s
-                  ? "border-accent-brand bg-accent-brand/8 text-accent-brand"
+                  ? "border-gold-500 bg-gold-500/8 text-gold-500"
                   : "border-border bg-muted text-muted-foreground hover:border-border/80"
               }`}
           >

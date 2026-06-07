@@ -18,7 +18,7 @@ export default async function TeamPage() {
         />
 
         {/* Hero */}
-        <PageHero title="Our Team" imageSrc="images/bg/hero-bg.png" />
+        <PageHero title="Our Team" imageSrc="/images/bg/hero-bg.png" />
         <TeamSection />
         <OurStory />
         <ImageCTA className="bg-brand-800" />

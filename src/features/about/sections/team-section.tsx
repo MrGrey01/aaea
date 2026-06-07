@@ -15,12 +15,12 @@ const team = [
   {
     name: "Mohammed Rabi.S.",
     role: "Media & Communications",
-    img: "/images/fallback.jpg",
+    img: "/images/team/mohammed.jpg",
   },
   {
-    name: "Lekan Fatoki",
-    role: "Social Media Management",
-    img: "/images/adedara.jpg",
+    name: "Adedara O. Faith",
+    role: "Printing Consultant",
+    img: "/images/team/adedara.jpg",
   },
   {
     name: "Oluwatobiloba Anthony",
@@ -48,9 +48,9 @@ const team = [
     img: "/images/team/daniyan.jpg",
   },
   {
-    name: "AJAYI MOJEED .O.",
-    role: "Finance / Accounting",
-    img: "/images/fallback.jpg",
+    name: "Christie O. Aigborhuan",
+    role: "Content Review Lead",
+    img: "/images/team/christie.jpg",
   },
   {
     name: "Abdulrazak Abdulganiyu",

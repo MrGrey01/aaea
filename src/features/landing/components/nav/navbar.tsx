@@ -26,10 +26,12 @@ export function NavbarClient({ isLoggedIn, role }: NavbarClientProps) {
 
   const navItems = [
     { name: "About", link: "/about", number: "01" },
-    { name: "Gallery", link: "#", number: "02" },
-    { name: "Team", link: "/team", number: "03" },
-    { name: "Updates", link: "/blog", number: "04" },
-    { name: "Contact", link: "/contact", number: "05" },
+    { name: "Awards", link: "#", number: "02" },
+    // { name: "Tickets", link: "#", number: "03" },
+    { name: "Gallery", link: "#", number: "04" },
+    { name: "Team", link: "/team", number: "05" },
+    { name: "News", link: "/blog", number: "06" },
+    { name: "Contact", link: "/contact", number: "07" },
     // ...(isAdmin ? [{ name: "Admin", link: "/admin/products" }] : []),
   ];
 

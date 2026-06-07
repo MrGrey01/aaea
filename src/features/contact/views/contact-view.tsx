@@ -11,6 +11,7 @@ export default async function ContactView() {
     client.sections.getBySlug({ slug: "contact-hero" }),
     client.sections.getBySlug({ slug: "contact-page-header" }),
   ]);
+  const config = await client.siteConfig.get();
 
   // const subtitleObj = splitWordBalanced(ContactHeaderData?.subtitle || "sub title");
 
@@ -34,7 +35,7 @@ export default async function ContactView() {
             ContactHeroData?.subtitle ||
             "Contact us to for more information, partnerships and sponsorship opportunities"
           }
-          imageSrc={ContactHeroData?.image || "images/bg/hero-bg.png"}
+          imageSrc={ContactHeroData?.image || "/images/bg/hero-bg.png"}
         />
         <div className="max-w-7xl mx-auto min-h-screen">
           {/* div className="min-h-screen bg-background text-foreground" */}
@@ -50,7 +51,7 @@ export default async function ContactView() {
             badgeActive
             variant="left"
           />
-          <ContactSection />
+          <ContactSection config={config} />
         </div>
       </div>
     </ReactLenis>

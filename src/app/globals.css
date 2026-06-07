@@ -102,6 +102,7 @@
      GOLD SCALE
   ========================== */
 
+  --color-dull-gold: var(--dull-gold);
   --color-gold-50: var(--gold-50);
   --color-gold-100: var(--gold-100);
   --color-gold-200: var(--gold-200);
@@ -129,14 +130,15 @@
 
 :root {
   /* ─── Premium Extras ─── */
-  --surface: oklch(0.20 0.01 260);
-  --cocoa: oklch(0.38 0.09 45);
-  --cocoa-hover: oklch(0.45 0.1 45);
-  --gold-hover: oklch(0.78 0.16 80);
+  --color-gold: #c89b3c;
+  --color-gold-light: #d4af5a;
+  --color-navy: #0a0c14;
+  --color-navy-light: #141828;
 
 
   /* BRAND SCALE */
   --brand: oklch(17.276% 0.05929 256.144);
+  --brand-dark: oklch(13.789% 0.02759 269.131);
   --brand-50: oklch(0.985 0.004 260);
   --brand-100: oklch(0.962 0.008 258);
   --brand-200: oklch(0.91 0.02 258);
@@ -150,6 +152,8 @@
   --brand-950: oklch(0.07 0.018 258);
 
   /* GOLD SCALE */
+  /* --dull-gold: #D4A24C; */
+  --dull-gold: oklab(74.251% 0.02333 0.11635);
   --gold-50: oklch(0.985 0.02 92);
   --gold-100: oklch(0.96 0.04 92);
   --gold-200: oklch(0.91 0.08 90);
@@ -417,4 +421,22 @@
     pointer-events: none;
     border-radius: inherit;
   }
+}
+
+@keyframes partners-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-partners {
+  animation: partners-scroll 30s linear infinite;
+}
+
+.animate-partners:hover {
+  animation-play-state: paused;
 }

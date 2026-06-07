@@ -2,11 +2,27 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarDays, Clock3, MapPin, Play } from "lucide-react";
+import { cn } from "@/lib/utils";
+import {
+  ArrowRightIcon,
+  CalendarDays,
+  Clock3,
+  MapPin,
+  Play,
+} from "lucide-react";
+import {
+  OutlineButton,
+  PrimaryButton,
+  SecondaryButton,
+} from "../components/buttons";
+import { StatsCard2 } from "../components/new/stats-card";
+import { PartnersLogo } from "../components/partners-logos";
+import { Separator } from "@/components/ui/separator";
+import { WatchVideoButton } from "../components/nav/watch-view-btn";
 
 export function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-brand-950 text-white">
+    <section className="relative flex flex-col isolate min-h-screen overflow-hidden bg-brand-950 text-white">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -30,22 +46,21 @@ export function HeroSection() {
       {/* Decorative lines */}
       <div className="absolute inset-x-0 bottom-0 h-px bg-gold-500/40" />
 
-      <div className="container relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-28 pb-16 lg:px-8">
-        <div className="grid w-full gap-14 lg:grid-cols-[1.1fr_0.72fr] lg:items-end">
+      <div className="container relative z-10 mx-auto xflex xmin-h-screen flex-1 max-w-7xl items-center px-6 pt-28 pb-16 lg:px-8">
+        <div className="grid w-full gap-14 lg:grid-cols-[1.5fr_0.72fr] lg:items-end">
           {/* LEFT CONTENT */}
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             {/* Eyebrow */}
-            <div className="mb-8 inline-flex items-center gap-3">
+            <div className="mb-4">
               {/* <div className="h-px w-14 bg-gold-500" /> */}
-
-              <p className="text-sm font-bold uppercase tracking-[0.28em] text-gold-400">
+              <p className="text-center md:text-left text-sm font-bold uppercase tracking-[0.28em] text-gold-400">
                 Recognizing Excellence. <br />
                 Elevating Aviation.
               </p>
             </div>
 
             {/* Heading */}
-            <div className="space-y-1">
+            <div className="space-y-1 text-center md:text-left">
               <h1 className="font-heading text-[5.3rem] font-black uppercase leading-[0.9] tracking-[-0.06em] text-white md:text-[10.7rem]">
                 AAEA
               </h1>
@@ -62,100 +77,101 @@ export function HeroSection() {
             </div>
 
             {/* Description */}
-            <p className="mt-8 max-w-xl text-base leading-8 text-white/72 md:text-lg">
+            <p className="text-center md:text-left mt-4 max-w-xl text-base leading-6 text-white/72 md:text-lg">
               Celebrating innovation, excellence, and leadership in the aviation
               industry. Join us for an unforgettable evening of recognition and
               networking.
             </p>
 
             {/* CTA */}
-            <div className="mt-10 flex flex-wrap items-center gap-5">
-              <Link
-                href="#"
-                className="group inline-flex h-14 items-center justify-center rounded-xl bg-gold-500 px-8 text-sm font-semibold text-brand-950 transition-all duration-300 hover:bg-gold-400 hover:shadow-[0_0_40px_rgba(255,196,0,0.35)]"
-              >
-                Buy Tickets
-              </Link>
+            <div className="mt-6 flex items-center gap-2">
+              <PrimaryButton className="text-sm">
+                Reserve Seat{" "}
+                <ArrowRightIcon
+                  className="h-3 md:h-5 w-3 md:w-5"
+                  strokeWidth={2}
+                />
+              </PrimaryButton>
+              <OutlineButton className="hidden md:flex text-sm">
+                Nominate Candidate{" "}
+                <ArrowRightIcon
+                  className="h-3 md:h-5 w-3 md:w-5"
+                  strokeWidth={2}
+                />
+              </OutlineButton>
+              <WatchVideoButton
+                videoId="TUuL8mpOlOE?si=kPKQtoAd4F8NLSrb"
+                title="Watch Trailer"
+              />
+            </div>
 
-              <Link
-                href="#"
-                className="group inline-flex h-14 items-center gap-5 rounded-xl border border-white/15 bg-white/3 px-5 pr-3 text-sm font-medium text-white backdrop-blur-xl transition-all duration-300 hover:bg-white/6"
-              >
-                <span>Learn More</span>
+            <div className="mt-10 flex flex-wrap gap-3 border-t border-gold-500/10 pt-6">
+              <InfoCard
+                icon={<CalendarDays className="w-5 h-5" />}
+                title="23rd May, 2026"
+                subtitle="Saturday"
+              />
 
-                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-500/50 bg-gold-500/10 text-gold-400 transition-transform duration-300 group-hover:scale-110">
-                  <Play className="ml-0.5 h-3.5 w-3.5 fill-current" />
-                </span>
-              </Link>
+              <Separator orientation="vertical" className="bg-gold-500/40" />
+
+              <InfoCard
+                icon={<Clock3 className="w-5 h-5" />}
+                title="6:00 PM Prompt"
+                subtitle="Red Carpet: 5:30 PM"
+              />
+              <Separator
+                orientation="vertical"
+                className="bg-gold-500/40 hidden md:block"
+              />
+              <InfoCard
+                icon={<MapPin className="w-5 h-5" />}
+                title="Abuja Continental"
+                subtitle="Abuja, Nigeria"
+              />
+              <Separator orientation="vertical" className="bg-gold-500/40" />
+              <InfoCard
+                className=""
+                icon={<MapPin className="w-5 h-5" />}
+                title="Dress Code"
+                subtitle="Black Tie"
+              />
             </div>
           </div>
 
           {/* RIGHT INFO CARD */}
-          <div className="flex justify-end">
-            <div className="relative w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-black/25 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.55)] backdrop-blur-2xl">
-              {/* Glow */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,196,0,0.12),transparent_45%)]" />
-
-              {/* Content */}
-              <div className="relative space-y-8">
-                {/* Date */}
-                <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gold-500/12 text-gold-400 ring-1 ring-gold-500/20">
-                    <CalendarDays className="h-5 w-5" />
-                  </div>
-
-                  <div>
-                    <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-gold-400">
-                      Date
-                    </p>
-
-                    <p className="text-sm font-medium text-white/90">
-                      21st September, 2025
-                    </p>
-                  </div>
-                </div>
-
-                {/* Venue */}
-                <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gold-500/12 text-gold-400 ring-1 ring-gold-500/20">
-                    <MapPin className="h-5 w-5" />
-                  </div>
-
-                  <div>
-                    <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-gold-400">
-                      Venue
-                    </p>
-
-                    <p className="max-w-65 text-sm leading-6 text-white/90">
-                      Nigerian Air Force Conference Centre, Abuja
-                    </p>
-                  </div>
-                </div>
-
-                {/* Time */}
-                <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gold-500/12 text-gold-400 ring-1 ring-gold-500/20">
-                    <Clock3 className="h-5 w-5" />
-                  </div>
-
-                  <div>
-                    <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-gold-400">
-                      Time
-                    </p>
-
-                    <p className="text-sm font-medium text-white/90">
-                      6:00 PM (WAT)
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom reflection */}
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-gold-500/4 to-transparent" />
-            </div>
+          <div className="flex justify-center md:justify-end">
+            <StatsCard2 />
           </div>
         </div>
       </div>
+      <div className="w-full mb-2 z-100">
+        <Separator className="bg-gold-500/30 max-w-[80%] mx-auto opacity-30" />
+        <PartnersLogo className="py-3" />
+      </div>
     </section>
+  );
+}
+
+function InfoCard({
+  icon,
+  title,
+  subtitle,
+  className,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  subtitle?: string;
+  className?: string;
+}) {
+  return (
+    <div className={cn("flex items-center gap-3 uppercase", className)}>
+      {/* icon */}
+      <div className="text-gold-500">{icon}</div>
+
+      <div className="text-xs">
+        <p className="">{title}</p>
+        {subtitle && <p className="text-xs text-white/50">{subtitle}</p>}
+      </div>
+    </div>
   );
 }
