@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export function About() {
   return (
-    <section className="pt-5">
+    <section className="pt-12">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-3 gap-10 items-center">
-          <div className="relative aspect-video overflow-hidden rounded-xl">
+          <div className="relative aspect-video overflow-hidden border border-gold-500/30 rounded-xl">
             <Image
               fill
               alt="VIP Lounge"
@@ -36,10 +36,10 @@ export function About() {
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <StatCard value="10+" label="Years Of Excellence" />
-            <StatCard value="5k+" label="Attendees & Members" />
-            <StatCard value="100+" label="Awards Presented" />
-            <StatCard value="50+" label="Partners & Sponsors" />
+            <StatCard value="10+" label="Years Of Excellence" icon="/icons/excellence.svg"/>
+            <StatCard value="5k+" label="Attendees & Members" icon="/icons/attenders.svg"/>
+            <StatCard value="100+" label="Awards Presented" icon="/icons/awards.svg"/>
+            <StatCard value="50+" label="Partners & Sponsors" icon="/icons/partners.svg"/>
           </div>
         </div>
       </div>
@@ -47,11 +47,17 @@ export function About() {
   );
 }
 
-function StatCard({ value, label }: { value: string; label: string }) {
+function StatCard({ value, label, icon }: { value: string; label: string, icon:string }) {
   return (
     <div className="flex items-center gap-2 rounded-xl border border-gold-500/15 bg-brand-700/40 p-3">
       <div className="flex items-center text-gold-600">
-        <UserIcon size={40} />
+        {/* <UserIcon size={40} /> */}
+        <Image
+         src={icon}
+          alt=""
+          width={57}
+          height={57}
+          />
       </div>
       <div className="uppercase">
         <div className="text-xl font-bold text-gold-500">{value}</div>

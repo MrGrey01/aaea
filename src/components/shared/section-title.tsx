@@ -18,7 +18,7 @@ export const SectionTitle = ({
       className={cn(
         "mb-4",
         isBlock
-          ? "font-display font-light leading-[0.92] tracking-[-0.03em]"
+          ? "font-heading font-black uppercase leading-[0.92] tracking-[-0.03em]"
           : "text-6xl font-bold tracking-tight ",
         className,
       )}

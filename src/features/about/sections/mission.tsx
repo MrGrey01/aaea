@@ -1,4 +1,5 @@
 import { Target, Eye, Gem, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 const values = [
   "Excellence",
@@ -37,11 +38,12 @@ export function MissionSection() {
     <section className="relative w-full bg-brand-700 font-sans py-14 md:py-20 overflow-hidden">
       {/* Faint full-bleed background image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/images/gallery/photo-1436491865332-7a61a109cc05.jpg"
           alt=""
+          fill
           aria-hidden="true"
-          className="w-full h-full object-cover object-center opacity-10"
+          className="w-full h-full object-cover object-center opacity-30"
         />
         <div className="absolute inset-0 bg-brand-700/70" />
       </div>
@@ -51,7 +53,7 @@ export function MissionSection() {
           {cards.map(({ number, icon: Icon, title, body, values }) => (
             <div
               key={number}
-              className="group relative flex flex-col rounded-xl border border-white/10 bg-[#0d1f38]/80 backdrop-blur-sm p-7 md:p-8 overflow-hidden hover:border-gold-500/40 transition-all duration-300"
+              className="group relative flex flex-col rounded-xl border border-white/10 bg-brand-700/80 backdrop-blur-sm p-7 md:p-8 overflow-hidden hover:border-gold-500/40 transition-all duration-300"
             >
               {/* Faint number watermark */}
               <span className="absolute bottom-5 right-6 font-heading text-6xl font-bold text-white/6 select-none leading-none">

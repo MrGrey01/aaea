@@ -1,5 +1,6 @@
 import { ArrowRight, Star, Users, Lightbulb, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const reasons = [
   {
@@ -30,7 +31,7 @@ export function WhyUs() {
       {/* ═══════════════════════════════════════════
           TOP BAND — Why AAEA + feature cards
       ═══════════════════════════════════════════ */}
-      <section className="relative w-full bg-brand overflow-hidden">
+      <section className="relative w-full bg-brand-700 overflow-hidden">
         {/* Decorative airplane silhouette — top right */}
         <div className="absolute top-4 right-8 opacity-20 pointer-events-none select-none">
           <svg
@@ -83,8 +84,9 @@ export function WhyUs() {
             </p>
 
             <Button
-              variant="outline"
-              className="group gap-2 rounded-lg border border-white/30 bg-transparent text-white text-[12px] tracking-widest uppercase font-semibold px-5 py-5 hover:bg-white hover:text-gold-500 transition-all duration-300"
+              // variant="outline"
+              size="lg"
+              className="group gap-2 rounded-lg border border-gold-500/30 bg-transparent text-white text-[12px] tracking-widest uppercase font-semibold px-5 py-5  hover:bg-white hover:text-gold-500 transition-all duration-300"
             >
               View Award Categories
               <ArrowRight
@@ -127,14 +129,15 @@ export function WhyUs() {
       <section className="relative w-full overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/images/gallery/photo-1464037866556-6812c9d1c72e.jpg"
             alt=""
+            fill
             aria-hidden="true"
             className="w-full h-full object-cover object-center"
           />
           {/* Deep navy overlay */}
-          <div className="absolute inset-0 bg-brand-500/88" />
+          <div className="absolute inset-0 bg-brand-800/88" />
           {/* Left gold diagonal chrome accent */}
           <div
             className="absolute inset-0 pointer-events-none"

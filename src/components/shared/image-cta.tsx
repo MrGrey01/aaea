@@ -87,9 +87,8 @@ export function ImageCTA({
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
           {/* Logotype */}
           <div
-            className="flex items-center gap-2 font-black text-white uppercase text-shadow-2xs text-center"
+            className="flex font-heading items-center gap-2 font-black text-brand-200 uppercase text-shadow-xs text-center max-w-3xl leading-none"
             style={{
-              fontFamily: "var(--font-display)",
               fontSize: "clamp(36px, 6vw, 56px)",
             }}
           >
@@ -97,7 +96,7 @@ export function ImageCTA({
               {title || "ABUJA AVIATION EXCELLENCE AWARDS"}
             </span>
             <span
-              className="hidden md:block text-accent-brand ml-0.5 leading-none"
+              className="hidden md:block text-gold-500 ml-0.5 leading-none"
               style={{ fontSize: "0.75em" }}
             >
               ✦
@@ -111,7 +110,7 @@ export function ImageCTA({
 
           {/* CTA Button */}
           <Link href={ctaLink || "/"}>
-            <button className="mt-7 bg-accent-brand hover:bg-accent-brand-700 transition-colors duration-200 text-white text-[11px] font-bold uppercase tracking-[0.3em] px-9 py-3 rounded-sm cursor-pointer">
+            <button className="mt-7 bg-gold-500 hover:bg-gold-400 transition-colors duration-200 text-white text-[11px] font-bold uppercase tracking-[0.3em] px-9 py-3 rounded-sm cursor-pointer">
               {ctaText || "Join Now"}
             </button>
           </Link>

@@ -14,9 +14,9 @@ const galleryImages = [
   "/images/gallery-1.png",
   "/images/gallery-2.png",
   "/images/gallery-3.png",
-  "/images/gallery-4.png",
+  "/images/gallery/stage.png",
   "/images/gallery-5.png",
-  "/images/gallery-6.png",
+  "/images/gallery/dine.jpg",
 ];
 
 const testimonials = [
@@ -113,7 +113,7 @@ export function ShowcaseSection() {
             </div>
 
             <div className="flex-1 flex flex-col">
-              <div className="h-full mb-5 bg-navy-light border border-gold-500/20 rounded-lg p-6 flex-1 relative flex flex-col items-center">
+              <div className="h-full mb-5 bg-navy-light border border-gold-500/20 rounded-lg p-6 flex-1 relative flex flex-col items-center justify-center">
                 <div className="absolute top-0 left-0 text-gold-500 text-5xl opacity-30 font-serif leading-none p-3">
                   &quot;
                 </div>

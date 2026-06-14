@@ -45,7 +45,7 @@ const galleryImages = [
 
 export default function OurStory() {
   return (
-    <section className="w-full py-10 bg-[#0b1a2e] font-sans">
+    <section className="w-full py-10 bg-brand-700/40 font-sans">
       {/* ── Top row: text + gallery ── */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-14 pb-10 flex flex-col lg:flex-row gap-10 lg:gap-5 items-start">
         {/* Left: text block */}

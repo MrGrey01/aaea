@@ -200,7 +200,7 @@ export default function GalleryView() {
 
       {/* ================= GALLERY ================= */}
       <section className="">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto px-24">
           <div className="grid auto-rows-[220px] grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
             {/* Gallery Images */}
             {galleryItems.map((item, index) => (

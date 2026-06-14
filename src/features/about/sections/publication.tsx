@@ -5,6 +5,7 @@ import { SectionBadge } from "@/components/shared/section-badge";
 import ParallaxImage from "@/components/shared/parallax-image";
 import { SectionWithItems } from "@/lib/db/schema";
 import Link from "next/link";
+import Image from "next/image";
 
 const ExpertIcon = () => {
   return (
@@ -32,15 +33,25 @@ interface ExpertiseSectionProps {
   sectionData: SectionWithItems | null;
 }
 
-export function ExpertiseSection({ sectionData }: ExpertiseSectionProps) {
+const sectionDescription =
+  "Our mission is to recognize, honor, and inspire individuals and organizations who demonstrate outstanding professionalism, service quality, and innovation in Nigeria’s aviation ecosystem. AAEA seeks to foster a culture of excellence, strengthen industry collaboration, and enhance public confidence in the aviation sector through credible recognition and engagement";
+
+export function PublicationSection({ sectionData }: ExpertiseSectionProps) {
   return (
     <section className="w-full px-6 py-12 md:px-12 md:py-16 bg-brand">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
         {/* ── Left: Image ── */}
         <div className="w-full md:w-[54%] shrink-0 relative">
-          <div className="relative w-full h-full rounded-2xl overflow-hidden">
-            <ParallaxImage
-              src={sectionData?.image || "/images/bg/about.jpg"}
+          <div className="relative aspect-4/5 rounded-2xl overflow-hidden">
+            {/* <ParallaxImage
+              src={sectionData?.image || "/images/gallery/book-front.jpeg"}
+              scale={0.9}
+              alt="Portrait"
+              className="object-cover object-center"
+            /> */}
+            <Image
+              src="/images/gallery/book-front.jpeg"
+              fill
               alt="Portrait"
               className="object-cover object-center"
             />
@@ -51,25 +62,24 @@ export function ExpertiseSection({ sectionData }: ExpertiseSectionProps) {
         <div className="flex-1 flex flex-col items-start">
           {/* Pill badge */}
           <SectionBadge
-            label="Why Us"
+            label="press"
             className="w-fit text-xs font-medium mb-3 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border text-accent-brand"
             icon={<ExpertIcon />}
           />
 
           {/* Heading */}
           <h2 className="text-[clamp(34px,4.5vw,54px)] font-black text-accent-brand-200 leading-[1.1] tracking-none mb-5 font-display">
-            {sectionData?.title || "Expertise in Photography"}
+            {"Publication"}
           </h2>
 
           {/* Subheading */}
           <p className="text-[15px] font-semibold text-accent-brand-100 mb-3">
-            {sectionData?.subtitle || "Bringing Your Ideas to Life®"}
+            {"Airport Operation & Passenger Experience Handbook"}
           </p>
 
           {/* Body */}
           <p className="text-sm text-gray-400 leading-relaxed max-w-sm mb-8">
-            {sectionData?.description ||
-              "Ass expert in Framer, we specialize in turning your ideas into functional websites. Whether it's a custom template, i ensure every project meets your vision and exceeds expectations."}
+            {sectionData?.description || sectionDescription}
           </p>
 
           {/* CTA row */}

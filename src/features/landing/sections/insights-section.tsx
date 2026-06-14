@@ -104,11 +104,11 @@ export default function LatestInsights({
         {/* Title */}
         <SectionTitle
           title={sectionData?.title || "Latest Insights."}
-          className="text-white"
+          className="text-brand-200"
         />
 
         {/* Subtitle */}
-        <p className="max-w-md text-sm text-muted-foreground leading-relaxed">
+        <p className="max-w-xl text-sm text-brand-400 leading-relaxed">
           {sectionData?.subtitle ||
             "Explore blog for design tips, industry insights, and creative inspiration. From tutorials to thought pieces, there&apos;s something for every curious mind."}
         </p>
@@ -117,7 +117,7 @@ export default function LatestInsights({
         <div className="mt-8 flex items-center gap-4">
           {/* View articles button */}
           <Link href={sectionData?.ctaLink || "/blog"}>
-            <button className="flex items-center gap-2 pl-1.5 pr-5 py-1.5 rounded-full bg-white border border-gray-200 text-sm font-medium text-gray-800 shadow-sm hover:shadow-md transition-shadow">
+            <button className="flex items-center gap-2 pl-1.5 pr-5 py-1.5 rounded-full bg-white border border-gray-200 text-sm font-medium text-brand-800 shadow-sm hover:shadow-md transition-shadow">
               <span className="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center shrink-0 text-white">
                 <ArrowRight2 />
               </span>

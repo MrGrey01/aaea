@@ -5,6 +5,7 @@ import { SectionTitle } from "@/components/shared/section-title";
 import { useState } from "react";
 import { Faq } from "@/lib/db/schema";
 import { MinusIcon, PlusIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface FAQSectionProps {
   faqs: Faq[];
@@ -16,7 +17,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
   const toggle = (id: string) => setOpenId((prev) => (prev === id ? null : id));
 
   return (
-    <section className="w-full px-8 py-16 bg-brand-500/50">
+    <section className="w-full px-8 py-16 bg-brand-700/50">
       <div className="max-w-6xl w-full mx-auto">
         {/* Top border */}
         {/* <div className="border-t border-gray-200 mb-12" /> */}
@@ -27,20 +28,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
             <div className="flex flex-col">
               <SectionBadge label="FAQ" className="w-fit" />
               <div className="flex">
-                <SectionTitle
-                  title="Answers"
-                  className="text-accent-brand-100"
-                />
-                <span
-                  className="text-accent-brand"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "clamp(4rem, 14vw, 13rem)",
-                    lineHeight: 0.88,
-                  }}
-                >
-                  *
-                </span>
+                <SectionTitle title="FAQs" className="text-gold-100" />
               </div>
             </div>
           </div>
@@ -54,17 +42,22 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                   className="w-full flex items-center gap-12 py-5 text-left group"
                 >
                   {/* Number */}
-                  <span className="w-8 shrink-0 text-sm text-gray-400 font-normal tracking-wide">
+                  <span className="w-8 shrink-0 text-sm text-brand-400 font-normal tracking-wide">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
 
                   {/* Question */}
-                  <span className="flex-1 text-[15px] text-accent-brand-50 font-normal">
+                  <span
+                    className={cn(
+                      "flex-1 text-[15px] font-normal",
+                      openId === faq.id ? " text-gold-500" : " text-brand-200",
+                    )}
+                  >
                     {faq.question}
                   </span>
 
                   {/* Plus / Minus icon */}
-                  <span className="shrink-0 text-accent-brand-50 hover:text-accent-brand-500 cursor-pointer leading-none">
+                  <span className="shrink-0 text-gold-50 hover:text-gold-500 cursor-pointer leading-none">
                     {openId === faq.id ? <MinusIcon /> : <PlusIcon />}
                   </span>
                 </button>
@@ -77,7 +70,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                 )}
 
                 {/* Divider */}
-                <div className="border-t border-accent-brand-200/40" />
+                <div className="border-t border-brand-200/10" />
               </div>
             ))}
           </div>

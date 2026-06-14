@@ -9,31 +9,31 @@ const timeline = [
 
 export function EventTimeline() {
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-6">
+    <section className="">
+      <div className="w-full md:max-w-2xl mx-auto px-3">
         <div className="text-center">
-          <span className="text-[#D4A24C] uppercase tracking-widest text-sm">
+          <span className="text-gold-500 uppercase tracking-widest text-sm">
             Event Timeline
           </span>
 
-          <h2 className="mt-4 text-5xl font-bold">Evening Schedule</h2>
+          <h2 className="mt-4 font-bold">Evening Schedule</h2>
         </div>
 
         <div className="max-w-3xl mx-auto mt-20">
           {timeline.map((item, index) => (
-            <div key={item} className="flex gap-6">
+            <div key={item} className="flex gap-2">
               <div className="flex flex-col items-center">
-                <div className="w-4 h-4 rounded-full bg-[#D4A24C]" />
+                <div className="w-4 h-4 rounded-full bg-gold-500" />
 
                 {index !== timeline.length - 1 && (
-                  <div className="w-px h-24 bg-[#D4A24C]/30" />
+                  <div className="w-px h-24 bg-gold-500/30" />
                 )}
               </div>
 
-              <div className="pb-12">
-                <div className="text-[#D4A24C] text-sm">{4 + index}:00 PM</div>
+              <div className="pb-3">
+                <div className="text-gold-500 text-sm">{4 + index}:00 PM</div>
 
-                <h3 className="text-xl font-semibold mt-1">{item}</h3>
+                <h3 className="text-sm font-semibold mt-1">{item}</h3>
               </div>
             </div>
           ))}

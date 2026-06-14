@@ -6,21 +6,25 @@ const whyItems = [
   {
     icon: Users,
     title: "Network",
+    image: "/icons/network.svg",
     text: "Connect with aviation experts, leaders and professionals.",
   },
   {
     icon: Trophy,
     title: "Recognition",
+    image: "/icons/recognition.svg",
     text: "Celebrate industry achievements and gain nobility among peers.",
   },
   {
     icon: Handshake,
     title: "Partnerships",
+    image: "/icons/partnership.svg",
     text: "Build valuable strategic relationships and explore new opportunities.",
   },
   {
     icon: TrendingUp,
     title: "Insights",
+    image: "/icons/insights.svg",
     text: "Discover industry trends and opportunities for the future of aviation.",
   },
 ];
@@ -77,7 +81,8 @@ export function Why() {
               key={item.title}
               className="relative flex flex-col items-center text-center rounded-xl bg-brand-700/50 backdrop-blur-lg border border-gold-500/15 p-4"
             >
-              <Icon className="w-10 h-10 text-gold-500" />
+              {/* <Icon className="w-10 h-10 text-gold-500" /> */}
+              <Image src={item.image} alt="" width={57} height={57} />
 
               <h3 className="mt-5 font-semibold text-gold-500 uppercase">
                 {item.title}

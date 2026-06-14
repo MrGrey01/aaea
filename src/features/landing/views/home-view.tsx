@@ -21,18 +21,21 @@ import { Testimonials } from "../components/new/testimonials";
 import { FaqSection } from "../components/new/faq-section";
 import { CtaBanner } from "../components/new/cta-banner";
 import { ShowcaseSection } from "../sections/showcase-section";
+import { Features } from "../sections/features";
+import LatestInsights from "../sections/insights-section";
 
 export const HomeView = async () => {
-  // const [sections, featuredPosts] = await Promise.all([
-  //   fetchSections([
-  //     "home-hero",
-  //     "home-carousel",
-  //     "difference-section",
-  //     "difference-section-gallery",
-  //     "posts-section",
-  //   ]),
-  //   client.blog.listFeatured(),
-  // ]);
+  const [
+    sections,
+    faqs,
+    featuredPosts,
+    // insightData
+  ] = await Promise.all([
+    fetchSections(["home-hero", "posts-section"]),
+    client.faq.list(),
+    client.blog.listFeatured(),
+    // client.sections.getBySlug({ slug: "posts-section" }),
+  ]);
 
   return (
     <>
@@ -41,24 +44,27 @@ export const HomeView = async () => {
       <About />
       <AwardCategories />
       <WhyAttend />
-      <ShowcaseSection />
-      {/* <FeaturedSpeakers /> */}
-      {/* <EventTimeline /> */}
-      {/* <SponsorshipPackages /> */}
+      <Features />
       {/* <PastWinners /> */}
+      <ShowcaseSection />
       {/* <TicketShowcase /> */}
       {/* <Gallery /> */}
       {/* <Testimonials /> */}
       {/* <FaqSection /> */}
       {/* <CtaBanner /> */}
 
-      <WhyAttendSection />
-      <HallOfFame />
+      {/* <WhyAttendSection /> */}
+      {/* <HallOfFame /> */}
 
       {/* <MapSection /> */}
-      <CTA />
+      {/* <CTA /> */}
       <CTASection />
       <ImageCTA className="bg-brand-800" />
+      <LatestInsights
+        sectionData={sections["posts-section"]}
+        posts={featuredPosts}
+      />
+      {/* <LatestInsights sectionData={insightData} posts={featuredPosts} /> */}
 
       {/* </ReactLenis> */}
     </>
